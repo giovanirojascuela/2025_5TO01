@@ -10,3 +10,4 @@
 5. Alexandra Hancco Vargas
 6. Sandra Vanessa Mamani Chambi
 7. Cristhian Cc. A.
+8. saduc soncco quispe
