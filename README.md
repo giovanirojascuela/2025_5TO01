@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ||||||| 28a0818
 
 # p02_ssh
@@ -359,6 +360,8 @@ Cambio Sandra Vanessa Mamani Chambi
 
 >>>>>>> d6812a094e4b8e18600d7ef2358d8d6ac5e84c75
 >>>>>>> 851106c388400838360a237a8f6d664f584b8888
+=======
+>>>>>>> 815add75d4dbbbcc36bd16128138e932a1bfc12e
 ### Senati
 ![alt text](https://www.senati.edu.pe/sites/all/themes/senati_theme/img/logo.svg)
 # p02_ssh
