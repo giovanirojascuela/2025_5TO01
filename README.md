@@ -12,6 +12,7 @@
 6. Sandra Vanessa Mamani Chambi
 7. Cristhian Cc. A.
 8. saduc soncco quispe
+9. Renato Fabrizio Gonzales Olazabal 1462350
 
 ### Senati
 ![alt text](https://www.senati.edu.pe/sites/all/themes/senati_theme/img/logo.svg)
@@ -24,3 +25,4 @@
 5. Alexandra Hancco Vargas
 6. **Sandra Vanessa Mamani Chambi**
 7. Cristhian Cc. A.
+8. Renato Fabrizio Gonzales Olazabal 1462350
