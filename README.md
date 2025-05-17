@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 ## Uso de llave SSH
 ## Archivo modificado por Giovani, mediante configuracion de llaves ssh.
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 ### Ordered List
@@ -61,3 +62,14 @@ Renato Fabrizio Gonzales Olazabal
 
 
 >>>>>>> 187a6e3e355a0d8f58d81662c55831dc1cc1304f
+=======
+
+### Lista de Participantes
+1. Jose Luis Mamani Choque - 1314313
+2. Andres [Apellido no especificado]
+3. **Edson Juvenal Pilco Condori**
+4. Diethmar Emerson Velez Guimaraes - 1517672
+5. Alexandra Hancco Vargas
+6. Sandra Vanessa Mamani Chambi
+7. Cristhian Cc. A.
+>>>>>>> 7c11882179fd2689d680679dff3e5798b6e3f313
