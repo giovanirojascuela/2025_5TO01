@@ -8,7 +8,6 @@
 ### Ordered List
 1. Jose Luis Mamani Choque 1314313
 2. andres 
-###Bold
 **3. Edson Juvenal Pilco Condori**
 4. Diethmar Emerson Velez Guimaraes 1517672
 5. Alexandra Hancco Vargas 
