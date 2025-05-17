@@ -18,4 +18,4 @@
 ### Enlaces
 [Guia Mardow](https://www.markdownguide.org)
 ### Insertar imagen
-![alt text](https://www.google.com/search?sca_esv=b74a6985e178e01b&rlz=1C1CHBF_enPE1114PE1114&q=doom+eternal+imagen+4k&udm=2&fbs=ABzOT_BnMAgCWdhr5zilP5f1cnRvK9uZj3HA_MTJAA6lXR8yQElaIApxtef1-RKg2CcwxXYsQSt6QRAacgvTpE0SimnyYj0K7l_rkN7dKXWgXOzSLB4hgs1wxbqLUJfgTfSKH2VmZwEpt1vp8PSxKR34cpYw2ucFtNgG1HvBjnVRwxnMOpTF2OndZbpHhqOi3IkDc5f1bacewrH9iA3pTDzijt-Phnnabw&sa=X&ved=2ahUKEwjezNbGyauNAxU5B7kGHfCdBCEQtKgLegQIEhAB&biw=1920&bih=953&dpr=1#vhid=b46gf_FaWBNnuM&vssid=mosaic)
+![alt text](https://www.hd-tecnologia.com/imagenes/articulos/2020/02/Se-revelan-los-primeros-10-minutos-de-Doom-Eternal-mostrando-todo-su-esplendor-en-4K-a-60-FPS.jpg)
