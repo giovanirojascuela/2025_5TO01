@@ -1,6 +1,137 @@
-## Uso de llave SSH
-## Archivo modificado por Giovani, mediante configuración de llaves SSH.
+<<<<<<< HEAD
+||||||| 187a6e3
+# p02_ssh
+### Senati
+![alt text](https://www.senati.edu.pe/sites/all/themes/senati_theme/img/logo.svg)
+=======
 
+# p02_ssh
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+||||||| 5b01a39
+=======
+||||||| b19cab2
+=======
+
+>>>>>>> d1c0fc4adc9058507fe63862017b2eab0905d725
+## Uso de llave SSH
+<<<<<<< HEAD
+## Archivo modificado por Giovani, mediante configuración de llaves SSH.
+||||||| 187a6e3
+## Archivo modificado por Giovani, mediante configuracion de llaves ssh.
+=======
+<<<<<<< HEAD
+### Ordered List
+1. Jose Luis Mamani Choque 1314313
+2. andres 
+3. Edson Juvenal Pilco Condori
+4. Diethmar Emerson Velez Guimaraes 1517672
+5. Alexandra Hancco Vargas 
+||||||| parent of 7c36e85 (Agregado mi nombre al README)
+---cambio
+Jose Luis Mamani Choque 1314313
+andres 
+**Edson Juvenal Pilco Condori
+
+Diethmar Emerson Velez Guimaraes 1517672
+
+**Alexandra Hancco Vargas** 
+=======
+<<<<<<< HEAD
+## Archivo modificado por Giovani, mediante configuracion de llaves ssh.
+
+1. Jose Luis Mamani Choque 1314313
+2. andres 
+3. Edson Juvenal Pilco Condori
+4. Diethmar Emerson Velez Guimaraes 1517672
+5. Alexandra Hancco Vargas
+6. **Sandra Vanessa Mamani Chambi** 
+||||||| d655488
+## Archivo modificado por Giovani, mediante configuracion de llaves ssh.
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+### Ordered List
+1. Jose Luis Mamani Choque 1314313
+2. andres 
+3. Edson Juvenal Pilco Condori
+4. Diethmar Emerson Velez Guimaraes 1517672
+<<<<<<< HEAD
+5. Alexandra Hancco Vargas
+6. **Sandra Vanessa Mamani Chambi** 
+||||||| 5b01a39
+5. Alexandra Hancco Vargas 
+=======
+5. Alexandra Hancco Vargas 
+||||||| parent of 7c36e85 (Agregado mi nombre al README)
+---cambio
+Jose Luis Mamani Choque 1314313
+andres 
+**Edson Juvenal Pilco Condori
+||||||| fccc40e
+=======
+<<<<<<< HEAD
+### Ordered List
+1. Jose Luis Mamani Choque 1314313
+2. andres 
+** 3. Edson Juvenal Pilco Condori **
+4. Diethmar Emerson Velez Guimaraes 1517672
+5. Alexandra Hancco Vargas 
+||||||| parent of 7c36e85 (Agregado mi nombre al README)
+---cambio
+Jose Luis Mamani Choque 1314313
+andres 
+**Edson Juvenal Pilco Condori
+=======
+>>>>>>> origin/main
+
+
+**Diethmar Emerson Velez Guimaraes**1517672
+
+
+**Alexandra Hancco Vargas** 
+
+
+<<<<<<< HEAD
+Diethmar Emerson Velez Guimaraes 1517672
+
+Alexandra Hancco Vargas
+
+Cambio Sandra Vanessa Mamani Chambi 
+
+>>>>>>> 56468dc091233936c83126fb8af9c55d4b8c2e8c
+>>>>>>> 7c36e85 (Agregado mi nombre al README)
+>>>>>>> b19cab2db7bb401d60425622cda91a09fb145a4c
+||||||| b19cab2
+Diethmar Emerson Velez Guimaraes 1517672
+
+Alexandra Hancco Vargas
+
+Cambio Sandra Vanessa Mamani Chambi 
+
+>>>>>>> 56468dc091233936c83126fb8af9c55d4b8c2e8c
+>>>>>>> 7c36e85 (Agregado mi nombre al README)
+=======
+>>>>>>> 187a6e3e355a0d8f58d81662c55831dc1cc1304f
+||||||| fccc40e
+Diethmar Emerson Velez Guimaraes 1517672
+
+Alexandra Hancco Vargas 
+
+>>>>>>> 56468dc091233936c83126fb8af9c55d4b8c2e8c
+=======
+---cambio
+Jose Luis Mamani Choque 1314313
+andres 
+**Edson Juvenal Pilco Condori
+
+Diethmar Emerson Velez Guimaraes 1517672
+
+Alexandra Hancco Vargas
+>>>>>>> d1c0fc4adc9058507fe63862017b2eab0905d725
+
+<<<<<<< HEAD
 ### Lista de Participantes
 1. Jose Luis Mamani Choque - 1314313
 2. Andres [Apellido no especificado]
@@ -11,4 +142,84 @@
 7. Cristhian Cc. A.
 8. saduc soncco quispe
 9. Renato Fabrizio Gonzales Olazabal 1462350
+||||||| 187a6e3
+=======
+Cambio Sandra Vanessa Mamani Chambi 
+>>>>>>> d1c0fc4adc9058507fe63862017b2eab0905d725
 
+>>>>>>> 56468dc091233936c83126fb8af9c55d4b8c2e8c
+>>>>>>> 7c36e85 (Agregado mi nombre al README)
+=======
+### Lista de Participantes
+1. Jose Luis Mamani Choque - 1314313
+2. Andres [Apellido no especificado]
+3. **Edson Juvenal Pilco Condori**
+4. **Diethmar Emerson Velez Guimaraes** - 1517672
+5. Alexandra Hancco Vargas
+6. Sandra Vanessa Mamani Chambi
+=======
+## Archivo modificado por Giovani, mediante configuración de llaves SSH.
+
+### Lista de Participantes
+1. Jose Luis Mamani Choque - 1314313
+2. Andres [Apellido no especificado]
+3. **Edson Juvenal Pilco Condori**
+4. Diethmar Emerson Velez Guimaraes - 1517672
+5. Alexandra Hancco Vargas
+6. Sandra Vanessa Mamani Chambi
+>>>>>>> 851106c388400838360a237a8f6d664f584b8888
+7. Cristhian Cc. A.
+8. saduc soncco quispe
+<<<<<<< HEAD
+
+||||||| d655488
+>>>>>>> origin/main
+>>>>>>> 95065957df9bd1c20a28bdd62638507c3060e096
+=======
+9. Renato Fabrizio Gonzales Olazabal 1462350
+
+>>>>>>> 851106c388400838360a237a8f6d664f584b8888
+### Senati
+![alt text](https://www.senati.edu.pe/sites/all/themes/senati_theme/img/logo.svg)
+<<<<<<< HEAD
+>>>>>>> b704e60820c5f8dfa1a80ba7b5d81cc50b56a15c
+## Uso de llave SSH
+## Archivo modificado por Giovani, mediante configuracion de llaves ssh.
+=======
+<<<<<<< HEAD
+||||||| b19cab2
+## Uso de llave SSH
+## Archivo modificado por Giovani, mediante configuracion de llaves ssh.
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 851106c388400838360a237a8f6d664f584b8888
+### Ordered List
+1. Jose Luis Mamani Choque 1314313
+2. andres
+3. **Edson Juvenal Pilco Condori**
+4. Diethmar Emerson Velez Guimaraes 1517672
+<<<<<<< HEAD
+5. Alexandra Hancco Vargas 
+<<<<<<< HEAD
+||||||| Stash base
+Uso de llave SSH
+Archivo modificado por Giovani, mediante configuracion de llaves ssh.
+---cambio
+Jose Luis Mamani Choque 1314313
+andres 
+Edson Juvenal Pilco Condori
+
+Diethmar Emerson Velez Guimaraes 1517672
+=======
+Uso de llave SSH
+Archivo modificado por Giovani, mediante configuracion de llaves ssh.
+---cambio
+Jose Luis Mamani Choque 1314313
+andres 
+Edson Juvenal Pilco Condori
+
+Diethmar Emerson Velez Guimaraes 1517672
+
+6. **Sandra Vanessa Mamani Chambi**
