@@ -37,3 +37,6 @@ Cambio Sandra Vanessa Mamani Chambi
 
 >>>>>>> 56468dc091233936c83126fb8af9c55d4b8c2e8c
 >>>>>>> 7c36e85 (Agregado mi nombre al README)
+
+## Nuevo contenido 
+Jose Luis Mamani Choque **
