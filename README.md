@@ -347,10 +347,16 @@ Cambio Sandra Vanessa Mamani Chambi
 8. saduc soncco quispe
 <<<<<<< HEAD
 <<<<<<< HEAD
+9. Marco Arce
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 7b96280d7d3ef3b83cfe2607631eaa4636b394af
 =======
 =======
 >>>>>>> d6812a094e4b8e18600d7ef2358d8d6ac5e84c75
+>>>>>>> origin
 
 ||||||| d655488
 >>>>>>> origin/main
@@ -360,8 +366,12 @@ Cambio Sandra Vanessa Mamani Chambi
 
 >>>>>>> d6812a094e4b8e18600d7ef2358d8d6ac5e84c75
 >>>>>>> 851106c388400838360a237a8f6d664f584b8888
+<<<<<<< HEAD
+>>>>>>> origin
+=======
 =======
 >>>>>>> 815add75d4dbbbcc36bd16128138e932a1bfc12e
+>>>>>>> origin
 ### Senati
 ![alt text](https://www.senati.edu.pe/sites/all/themes/senati_theme/img/logo.svg)
 # p02_ssh
