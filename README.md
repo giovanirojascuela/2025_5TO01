@@ -1,4 +1,6 @@
 # p02_ssh
+### Image
+![alt text](https://www.senati.edu.pe/sites/all/themes/senati_theme/img/logo.svg)
 ## Uso de llave SSH
 ## Archivo modificado por Giovani, mediante configuracion de llaves ssh.
 =======
