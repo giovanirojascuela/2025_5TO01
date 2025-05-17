@@ -5,3 +5,5 @@ Archivo modificado por Giovani, mediante configuracion de llaves ssh.
 Jose Luis Mamani Choque 1314313
 andres 
 Edson Juvenal Pilco Condori
+
+Diethmar Emerson Velez Guimaraes 1517672
