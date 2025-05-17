@@ -1,11 +1,7 @@
 # p02_ssh
 Uso de llave SSH
 Archivo modificado por Giovani, mediante configuracion de llaves ssh.
-<<<<<<< HEAD
-rovba
-||||||| cbc4eeb
 =======
----cambio
 ### Ordered List
 1. Jose Luis Mamani Choque 1314313
 2. andres 
