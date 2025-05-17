@@ -387,3 +387,5 @@ Cambio Sandra Vanessa Mamani Chambi
 9. **Saduc Soncco Quispe**
 
 >>>>>>> a3cc2192e45073893e0c2880c8e697aba7897b53
+saduc soncco quispe
+
