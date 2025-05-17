@@ -8,4 +8,4 @@
 3. **Edson Juvenal Pilco Condori
 4. Diethmar Emerson Velez Guimaraes 1517672
 5. Alexandra Hancco Vargas
-6. Sandra Vanessa Mamani Chambi 
+6. **Sandra Vanessa Mamani Chambi** 
