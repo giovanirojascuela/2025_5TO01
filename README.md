@@ -11,4 +11,7 @@ andres
 **Edson Juvenal Pilco Condori
 
 Diethmar Emerson Velez Guimaraes 1517672
+
+Alexandra Hancco Vargas 
+
 >>>>>>> 56468dc091233936c83126fb8af9c55d4b8c2e8c
