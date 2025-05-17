@@ -57,16 +57,10 @@ andres
 Jose Luis Mamani Choque 1314313
 andres 
 **Edson Juvenal Pilco Condori
-=======
->>>>>>> origin/main
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 **Diethmar Emerson Velez Guimaraes**1517672
-||||||| 56468dc
-Diethmar Emerson Velez Guimaraes 1517672
-=======
-Diethmar Emerson Velez Guimaraes 1517672
+
 
 **Alexandra Hancco Vargas** 
 
