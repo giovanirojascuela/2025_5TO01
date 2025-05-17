@@ -57,13 +57,9 @@ andres
 =======
 >>>>>>> origin/main
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 **Diethmar Emerson Velez Guimaraes**1517672
-||||||| 56468dc
-Diethmar Emerson Velez Guimaraes 1517672
-=======
-Diethmar Emerson Velez Guimaraes 1517672
+
 
 **Alexandra Hancco Vargas** 
 
@@ -114,7 +110,7 @@ Cambio Sandra Vanessa Mamani Chambi
 1. Jose Luis Mamani Choque - 1314313
 2. Andres [Apellido no especificado]
 3. **Edson Juvenal Pilco Condori**
-4. Diethmar Emerson Velez Guimaraes - 1517672
+4. **Diethmar Emerson Velez Guimaraes** - 1517672
 5. Alexandra Hancco Vargas
 6. Sandra Vanessa Mamani Chambi
 =======
