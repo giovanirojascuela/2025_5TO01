@@ -6,12 +6,9 @@ rovba
 ||||||| cbc4eeb
 =======
 ---cambio
-Jose Luis Mamani Choque 1314313
-andres 
-**Edson Juvenal Pilco Condori
-
-Diethmar Emerson Velez Guimaraes 1517672
-
-Alexandra Hancco Vargas 
-
->>>>>>> 56468dc091233936c83126fb8af9c55d4b8c2e8c
+### Ordered List
+1. Jose Luis Mamani Choque 1314313
+2. andres 
+3. **Edson Juvenal Pilco Condori
+4. Diethmar Emerson Velez Guimaraes 1517672
+5. Alexandra Hancco Vargas 
