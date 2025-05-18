@@ -107,6 +107,8 @@ Cambio Sandra Vanessa Mamani Chambi
 
 Elver Mamani Quispe -el pedri 
 
+Claudio  Emerson Vilca Calsina
+
 >>>>>>> 56468dc091233936c83126fb8af9c55d4b8c2e8c
 >>>>>>> 7c36e85 (Agregado mi nombre al README)
 =======
