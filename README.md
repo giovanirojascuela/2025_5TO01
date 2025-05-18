@@ -20,7 +20,8 @@
 3. Edson Juvenal Pilco Condori
 4. Diethmar Emerson Velez Guimaraes 1517672
 5. Alexandra Hancco Vargas
-6. **Sandra Vanessa Mamani Chambi** 
+6. **Sandra Vanessa Mamani Chambi**
+7. **Claudio Emerson Vilca Calcina**
 ||||||| d655488
 ## Archivo modificado por Giovani, mediante configuracion de llaves ssh.
 <<<<<<< HEAD
