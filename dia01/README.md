@@ -4,4 +4,4 @@ PRACTICA 01
 en README.md:
 
 Edson Juvenal Pilco Condori
-
+Erick Brady Alvarez Quispe
