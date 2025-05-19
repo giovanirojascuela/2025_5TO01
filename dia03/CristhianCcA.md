@@ -10,6 +10,7 @@
 3. Cocinar
 #. Programar
 ###Mis comidas favoritas (Lista no ordenada)
+- Papa con papa
 - Tallarin
 - Pollo a la barbiquiu
 - Arros a la jardinera 
