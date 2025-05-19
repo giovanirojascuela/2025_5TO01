@@ -1,2 +1,2 @@
-var=5
-consolelog(Elver);
+var=5;
+console.log("Elver");
