@@ -20,3 +20,4 @@ let simbolo = Symbol("id");
 
 // BigInt (números muy grandes)
 let numeroGrande = 1234567890123456789012345678901234567890n;
+console.log ("Hola Mundo")
