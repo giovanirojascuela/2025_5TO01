@@ -4,4 +4,5 @@ PRACTICA 01
 en README.md:
 
 Edson Juvenal Pilco Condori
+Alexandra Adela Hancco Vargas
 
