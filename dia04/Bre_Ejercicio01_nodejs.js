@@ -18,5 +18,7 @@ console.log(mensaje)
  console.log(no)
  console.log(dato)
  console.log(dat)
+var =5;
+console.log("hola");
  
 
