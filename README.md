@@ -29,7 +29,7 @@
 <<<<<<< HEAD
 ### Ordered List
 1. Jose Luis Mamani Choque 1314313
-2. andres 
+2. andres alanoca parizaca
 3. Edson Juvenal Pilco Condori
 4. Diethmar Emerson Velez Guimaraes 1517672
 <<<<<<< HEAD
@@ -49,14 +49,14 @@ andres
 <<<<<<< HEAD
 ### Ordered List
 1. Jose Luis Mamani Choque 1314313
-2. andres 
+2. andres alanoca parizaca
 ** 3. Edson Juvenal Pilco Condori **
 4. Diethmar Emerson Velez Guimaraes 1517672
 5. Alexandra Hancco Vargas 
 ||||||| parent of 7c36e85 (Agregado mi nombre al README)
 ---cambio
 Jose Luis Mamani Choque 1314313
-andres 
+andres alanoca parizaca
 **Edson Juvenal Pilco Condori
 
 
@@ -96,7 +96,7 @@ Alexandra Hancco Vargas
 =======
 ---cambio
 Jose Luis Mamani Choque 1314313
-andres 
+andres alanoca parizaca
 **Edson Juvenal Pilco Condori
 
 Diethmar Emerson Velez Guimaraes 1517672
@@ -115,7 +115,7 @@ Claudio  Emerson Vilca Calsina
 =======
 ### Lista de Participantes
 1. Jose Luis Mamani Choque - 1314313
-2. Andres [Apellido no especificado]
+2. Andres alanoca parizaca
 3. **Edson Juvenal Pilco Condori**
 4. Diethmar Emerson Velez Guimaraes - 1517672
 5. Alexandra Hancco Vargas
@@ -125,7 +125,7 @@ Claudio  Emerson Vilca Calsina
 
 ### Lista de Participantes
 1. Jose Luis Mamani Choque - 1314313
-2. Andres [Apellido no especificado]
+2. Andres alanoca parizaca
 3. **Edson Juvenal Pilco Condori**
 4. Diethmar Emerson Velez Guimaraes - 1517672
 5. Alexandra Hancco Vargas
@@ -166,7 +166,7 @@ Claudio  Emerson Vilca Calsina
 
 ### Ordered List
 1. Jose Luis Mamani Choque 1314313
-2. andres 
+2. andres alanoca parizaca
 ###Bold
 ** 3. Edson Juvenal Pilco Condori **
 =======
@@ -178,7 +178,7 @@ Claudio  Emerson Vilca Calsina
 <<<<<<< HEAD
 ### Ordered List
 1. Jose Luis Mamani Choque 1314313
-2. andres 
+2. andres alanoca parizaca
 3. Edson Juvenal Pilco Condori
 >>>>>>> d6812a094e4b8e18600d7ef2358d8d6ac5e84c75
 4. Diethmar Emerson Velez Guimaraes 1517672
@@ -186,7 +186,7 @@ Claudio  Emerson Vilca Calsina
 ||||||| parent of 7c36e85 (Agregado mi nombre al README)
 ---cambio
 Jose Luis Mamani Choque 1314313
-andres 
+andres alanoca parizaca
 **Edson Juvenal Pilco Condori
 
 Diethmar Emerson Velez Guimaraes 1517672
@@ -337,7 +337,7 @@ Cambio Sandra Vanessa Mamani Chambi
 
 ### Lista de Participantes
 1. Jose Luis Mamani Choque - 1314313
-2. Andres [Apellido no especificado]
+2. Andres alanoca parizaca
 3. **Edson Juvenal Pilco Condori**
 4. Diethmar Emerson Velez Guimaraes - 1517672
 5. Alexandra Hancco Vargas
@@ -380,7 +380,7 @@ Cambio Sandra Vanessa Mamani Chambi
 ### **Lista de Participantes:**
 
 1. **Jose Luis Mamani Choque** - 1314313
-2. **andres**
+2. **andres alanoca parizaca**
 3. **Edson Juvenal Pilco Condori**
 4. **Diethmar Emerson Velez Guimaraes** - 1517672
 5. **Alexandra Hancco Vargas**
