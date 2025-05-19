@@ -16,11 +16,12 @@
 ## Archivo modificado por Giovani, mediante configuracion de llaves ssh.
 
 1. Jose Luis Mamani Choque 1314313
-2. andres 
+2. andres alanoca parizaca
 3. Edson Juvenal Pilco Condori
 4. Diethmar Emerson Velez Guimaraes 1517672
 5. Alexandra Hancco Vargas
-6. **Sandra Vanessa Mamani Chambi** 
+6. **Sandra Vanessa Mamani Chambi**
+7. **Claudio Emerson Vilca Calcina**
 ||||||| d655488
 ## Archivo modificado por Giovani, mediante configuracion de llaves ssh.
 <<<<<<< HEAD
@@ -28,7 +29,7 @@
 <<<<<<< HEAD
 ### Ordered List
 1. Jose Luis Mamani Choque 1314313
-2. andres 
+2. andres alanoca parizaca
 3. Edson Juvenal Pilco Condori
 4. Diethmar Emerson Velez Guimaraes 1517672
 <<<<<<< HEAD
@@ -48,25 +49,19 @@ andres
 <<<<<<< HEAD
 ### Ordered List
 1. Jose Luis Mamani Choque 1314313
-2. andres 
+2. andres alanoca parizaca
 ** 3. Edson Juvenal Pilco Condori **
 4. Diethmar Emerson Velez Guimaraes 1517672
 5. Alexandra Hancco Vargas 
 ||||||| parent of 7c36e85 (Agregado mi nombre al README)
 ---cambio
 Jose Luis Mamani Choque 1314313
-andres 
+andres alanoca parizaca
 **Edson Juvenal Pilco Condori
-=======
->>>>>>> origin/main
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 **Diethmar Emerson Velez Guimaraes**1517672
-||||||| 56468dc
-Diethmar Emerson Velez Guimaraes 1517672
-=======
-Diethmar Emerson Velez Guimaraes 1517672
+
 
 **Alexandra Hancco Vargas** 
 
@@ -101,7 +96,7 @@ Alexandra Hancco Vargas
 =======
 ---cambio
 Jose Luis Mamani Choque 1314313
-andres 
+andres alanoca parizaca
 **Edson Juvenal Pilco Condori
 
 Diethmar Emerson Velez Guimaraes 1517672
@@ -110,12 +105,17 @@ Alexandra Hancco Vargas
 
 Cambio Sandra Vanessa Mamani Chambi 
 
+
+Elver Mamani Quispe -el pedri 
+
+Claudio  Emerson Vilca Calsina
+
 >>>>>>> 56468dc091233936c83126fb8af9c55d4b8c2e8c
 >>>>>>> 7c36e85 (Agregado mi nombre al README)
 =======
 ### Lista de Participantes
 1. Jose Luis Mamani Choque - 1314313
-2. Andres [Apellido no especificado]
+2. Andres alanoca parizaca
 3. **Edson Juvenal Pilco Condori**
 4. Diethmar Emerson Velez Guimaraes - 1517672
 5. Alexandra Hancco Vargas
@@ -125,7 +125,7 @@ Cambio Sandra Vanessa Mamani Chambi
 
 ### Lista de Participantes
 1. Jose Luis Mamani Choque - 1314313
-2. Andres [Apellido no especificado]
+2. Andres alanoca parizaca
 3. **Edson Juvenal Pilco Condori**
 4. Diethmar Emerson Velez Guimaraes - 1517672
 5. Alexandra Hancco Vargas
@@ -166,7 +166,7 @@ Cambio Sandra Vanessa Mamani Chambi
 
 ### Ordered List
 1. Jose Luis Mamani Choque 1314313
-2. andres 
+2. andres alanoca parizaca
 ###Bold
 ** 3. Edson Juvenal Pilco Condori **
 =======
@@ -178,7 +178,7 @@ Cambio Sandra Vanessa Mamani Chambi
 <<<<<<< HEAD
 ### Ordered List
 1. Jose Luis Mamani Choque 1314313
-2. andres 
+2. andres alanoca parizaca
 3. Edson Juvenal Pilco Condori
 >>>>>>> d6812a094e4b8e18600d7ef2358d8d6ac5e84c75
 4. Diethmar Emerson Velez Guimaraes 1517672
@@ -186,7 +186,7 @@ Cambio Sandra Vanessa Mamani Chambi
 ||||||| parent of 7c36e85 (Agregado mi nombre al README)
 ---cambio
 Jose Luis Mamani Choque 1314313
-andres 
+andres alanoca parizaca
 **Edson Juvenal Pilco Condori
 
 Diethmar Emerson Velez Guimaraes 1517672
@@ -337,7 +337,7 @@ Cambio Sandra Vanessa Mamani Chambi
 
 ### Lista de Participantes
 1. Jose Luis Mamani Choque - 1314313
-2. Andres [Apellido no especificado]
+2. Andres alanoca parizaca
 3. **Edson Juvenal Pilco Condori**
 4. Diethmar Emerson Velez Guimaraes - 1517672
 5. Alexandra Hancco Vargas
@@ -380,7 +380,7 @@ Cambio Sandra Vanessa Mamani Chambi
 ### **Lista de Participantes:**
 
 1. **Jose Luis Mamani Choque** - 1314313
-2. **andres**
+2. **andres alanoca parizaca**
 3. **Edson Juvenal Pilco Condori**
 4. **Diethmar Emerson Velez Guimaraes** - 1517672
 5. **Alexandra Hancco Vargas**
@@ -397,3 +397,5 @@ Cambio Sandra Vanessa Mamani Chambi
 9. **Saduc Soncco Quispe**
 
 >>>>>>> a3cc2192e45073893e0c2880c8e697aba7897b53
+saduc soncco quispe
+
