@@ -20,7 +20,8 @@
 3. Edson Juvenal Pilco Condori
 4. Diethmar Emerson Velez Guimaraes 1517672
 5. Alexandra Hancco Vargas
-6. **Sandra Vanessa Mamani Chambi** 
+6. **Sandra Vanessa Mamani Chambi**
+7. **Claudio Emerson Vilca Calcina**
 ||||||| d655488
 ## Archivo modificado por Giovani, mediante configuracion de llaves ssh.
 <<<<<<< HEAD
@@ -57,16 +58,10 @@ andres
 Jose Luis Mamani Choque 1314313
 andres 
 **Edson Juvenal Pilco Condori
-=======
->>>>>>> origin/main
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 **Diethmar Emerson Velez Guimaraes**1517672
-||||||| 56468dc
-Diethmar Emerson Velez Guimaraes 1517672
-=======
-Diethmar Emerson Velez Guimaraes 1517672
+
 
 **Alexandra Hancco Vargas** 
 
@@ -109,6 +104,11 @@ Diethmar Emerson Velez Guimaraes 1517672
 Alexandra Hancco Vargas
 
 Cambio Sandra Vanessa Mamani Chambi 
+
+
+Elver Mamani Quispe -el pedri 
+
+Claudio  Emerson Vilca Calsina
 
 >>>>>>> 56468dc091233936c83126fb8af9c55d4b8c2e8c
 >>>>>>> 7c36e85 (Agregado mi nombre al README)
@@ -347,10 +347,16 @@ Cambio Sandra Vanessa Mamani Chambi
 8. saduc soncco quispe
 <<<<<<< HEAD
 <<<<<<< HEAD
+9. Marco Arce
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
 7b96280d7d3ef3b83cfe2607631eaa4636b394af
 =======
 =======
 >>>>>>> d6812a094e4b8e18600d7ef2358d8d6ac5e84c75
+>>>>>>> origin
 
 ||||||| d655488
 >>>>>>> origin/main
@@ -360,8 +366,12 @@ Cambio Sandra Vanessa Mamani Chambi
 
 >>>>>>> d6812a094e4b8e18600d7ef2358d8d6ac5e84c75
 >>>>>>> 851106c388400838360a237a8f6d664f584b8888
+<<<<<<< HEAD
+>>>>>>> origin
+=======
 =======
 >>>>>>> 815add75d4dbbbcc36bd16128138e932a1bfc12e
+>>>>>>> origin
 ### Senati
 ![alt text](https://www.senati.edu.pe/sites/all/themes/senati_theme/img/logo.svg)
 # p02_ssh
