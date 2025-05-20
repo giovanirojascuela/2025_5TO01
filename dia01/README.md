@@ -10,3 +10,4 @@ Marco Antonio Arce Vilca
 Yoel Yhonatan Choquepata Mamani
 Alexandra Hancco Vargas
 Sandra Vanessa Mamani Chambi
+Alain Cristhiam Chambi Turpo
