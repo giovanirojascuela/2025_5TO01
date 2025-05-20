@@ -11,3 +11,4 @@ Yoel Yhonatan Choquepata Mamani
 Alexandra Hancco Vargas
 Sandra Vanessa Mamani Chambi
 Alain Cristhiam Chambi Turpo
+Cristhian Ccallo Arela
