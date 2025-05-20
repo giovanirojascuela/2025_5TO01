@@ -1,6 +1,7 @@
 //primer ejemplo hola mundo declarando con variables con var
 var mensaje = "hola mundo"
 console.log(mensaje)
+// Modificación para probar commit
 
 //segundo ejemplo tipo de variables
 var miEntero = 1;
