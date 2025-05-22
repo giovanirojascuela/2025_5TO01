@@ -10,4 +10,4 @@ en README.md:
 4. Yoel Yhonatan Choquepata Mamani
 5. Alexandra Hancco Vargas
 6. Sandra Vanessa Mamani Chambi
-7 .Alain Cristhiam Chambi Turpo
+7. Alain Cristhiam Chambi Turpo
