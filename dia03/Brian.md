@@ -27,6 +27,5 @@
 ---
 
 # Enlaces
-# Enlaces
 - [Guía Markdown](https://www.markdownguide.org)
 - ![Insertar Imagen](https://www.twistedroad.com/bikes/us/ca/los-angeles/2019-yamaha-mt-09/m-v97rmke)
