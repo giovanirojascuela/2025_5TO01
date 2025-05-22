@@ -1,0 +1,15 @@
+const os=require('node:os')
+
+console.log("Informacion del sistema operativo")
+console.log("-------------------------------")
+console.log("Nombre SO ",os.platform())
+console.log("Version SO ",os.release())
+console.log("Arquitectura SO ",os.arch())
+console.log("CPus SO ",os.cpus())
+console.log("Memoria Libre SO ",os.freemem()/1024/1024)
+console.log("Memoria total SO ",os.totalmem()/1024/1024)
+console.log("Uptime SO ",os.uptime()/60/60)
+
+
+
+
