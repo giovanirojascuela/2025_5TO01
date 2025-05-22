@@ -18,4 +18,3 @@
 9. Cristhian Cc. A.
 10. saduc soncco quispe
 11. Renato Fabrizio Gonzales Olazabal 1462350
-12. saduc soncco quispe
