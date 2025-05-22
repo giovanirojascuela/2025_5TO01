@@ -4,10 +4,10 @@ PRACTICA 01
 	p02_ssh/dia_01
 en README.md:
 
-Edson Juvenal Pilco Condori
-Erick Brady Alvarez Quispe
-Marco Antonio Arce Vilca
-Yoel Yhonatan Choquepata Mamani
-Alexandra Hancco Vargas
-Sandra Vanessa Mamani Chambi
-Alain Cristhiam Chambi Turpo
+1. Edson Juvenal Pilco Condori
+2. Erick Brady Alvarez Quispe
+3. Marco Antonio Arce Vilca
+4. Yoel Yhonatan Choquepata Mamani
+5. Alexandra Hancco Vargas
+6. Sandra Vanessa Mamani Chambi
+7 .Alain Cristhiam Chambi Turpo
