@@ -4,7 +4,4 @@ PRACTICA 01
 	p02_ssh/dia_01
 en README.md:
 
-Edson Juvenal Pilco Condori
-Erick Brady Alvarez Quispe
-Marco Antonio Arce Vilca
-Yoel Yhonatan Choquepata mamani
+
