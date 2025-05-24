@@ -1,20 +1,143 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-||||||| 28a0818
+### Senati
+![alt text](https://www.senati.edu.pe/sites/all/themes/senati_theme/img/logo.svg)
 
-# p02_ssh
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-||||||| 5b01a39
+# Flujo de Trabajo Git para GitHub
+
+### 1. Configuración Inicial (Única Vez)
+
+```bash
+ssh-keygen -t ed25519 -C "tu_correo@example.com"    #  Generar clave SSH (si es la primera vez)
+Get-Service ssh-agent | Set-Service -StartupType Manual #  Iniciar agente SSH
+ssh-agent                                             #  Asegurar que el agente SSH esté corriendo
+ssh-add C:\Users\TU_USUARIO\.ssh\id_ed25519           #  Añadir clave SSH al agente
+
+git config --global user.email "giovanirojascuela@gmail.com" #  Configurar email globalmente
+git config --global user.name "Gio"                          #  Configurar nombre globalmente
+```
+
+---
+
+### 2. Clonar Repositorio Existente
+
+```bash
+git clone git@github.com:giovanirojascuela/2025_5TO01.git    #  Clona el repositorio a tu máquina local
+cd 2025_5TO01                                              #  Entra en la carpeta del proyecto
+```
+
+---
+
+### 3. Crear y Cambiar a una Nueva Rama
+
+```bash
+git checkout -b nueva-rama-desarrollo  #  Crea una nueva rama y cámbiate a ella
+git checkout nombre-de-rama-existente  #  Si la rama ya existe, solo cámbiate a ella
+```
+
+---
+
+### 4. Ciclo de Desarrollo Básico (Trabajar y Enviar Cambios)
+
+```bash
+git status                                   #  Verifica el estado actual de tus archivos
+git add .                                    #  Añade todos los cambios al área de staging
+git commit -m "Descripción concisa de los cambios" #  Confirma los cambios con un mensaje claro
+git push origin tu-rama-actual               #  Envía tus cambios a la rama remota
+```
+
+---
+
+### 5. Sincronización de Ramas
+
+#### 5.1. Actualizar tu Rama Local 'main' con la Rama Remota 'main'
+
+Este flujo asegura que tu versión local de la rama principal (`main`) esté completamente al día con lo que hay en el servidor (GitHub).
+
+```bash
+git checkout main         #  Cambia a la rama principal (main)
+git fetch origin          #  Descarga los últimos cambios de 'main' desde el remoto (sin fusionar automáticamente)
+git merge origin/main     #  Fusiona los cambios descargados de 'origin/main' en tu rama local 'main'
+#  Alternativa para actualizar y fusionar en un solo paso: git pull origin main
+```
+
+---
+
+#### 5.2. Actualizar tu Rama de Trabajo ('gio') con la Rama Local 'main'
+
+Este flujo te permite traer las últimas actualizaciones de la rama `main` (que ya has sincronizado localmente) a tu rama de desarrollo (`gio`), para evitar conflictos futuros y trabajar con la base de código más reciente.
+
+```bash
+git checkout gio          #  Asegúrate de estar en tu rama de trabajo (ej. 'gio')
+git merge main            #  Fusiona los cambios de la rama local 'main' en tu rama actual ('gio')
+#  Resuelve los conflictos si los hay (Git te guiará durante el proceso)
+git push origin gio       #  Envía los cambios fusionados (y resueltos) a tu rama remota 'gio'
+```
+
+---
+
+### 6. Deshacer Cambios
+
+#### 6.1. Deshacer Cambios Locales No Añadidos (Unstaged)
+
+```bash
+git checkout -- nombre-del-archivo.txt #  Descarta cambios en un archivo específico
+git reset --hard HEAD                  #  Descarta todos los cambios en el directorio de trabajo (¡con precaución!)
+```
+
+#### 6.2. Deshacer Cambios del Área de Staging (Unstage)
+
+```bash
+git reset HEAD nombre-del-archivo.txt  #  Mueve un archivo del staging de vuelta al área de trabajo
+git reset HEAD .                       #  Mueve todos los archivos del staging de vuelta al área de trabajo
+```
+
+#### 6.3. Deshacer el Último Commit (Local)
+
+```bash
+git revert HEAD         #  Crea un nuevo commit que revierte los cambios del último (seguro si ya hiciste push)
+git reset --soft HEAD~1 #  Deshace el último commit y mueve los cambios al staging (¡solo si NO has hecho push!)
+git reset --hard HEAD~1 #  Deshace el último commit y descarta los cambios (¡solo si NO has hecho push y quieres perderlos!)
+```
+
+---
+
+### 7. Borrar Archivos o Carpetas del Repositorio
+
+```bash
+git rm --cached nombre-del-archivo.txt #  Eliminar un archivo del control de versiones (lo mantiene localmente)
+git rm nombre-del-archivo.txt          #  Eliminar un archivo del control de versiones y del disco local
+git rm -r nombre-de-la-carpeta/        #  Eliminar una carpeta del control de versiones (recursivo)
+
+git commit -m "Eliminado archivo/carpeta X" #  Después de usar 'git rm', recuerda hacer commit
+git push origin tu-rama-actual              #  Y luego push para reflejar los cambios en el remoto
+```
+
+---
+
+### 8. Ver Historial y Ramas
+
+```bash
+git log                            #  Muestra el historial de commits
+git log --oneline --graph --all    #  Muestra un historial más conciso y gráfico de todas las ramas
+git branch -av                     #  Muestra todas las ramas locales y remotas
+```
+
+---
+
+### 9. Manejo de Tags (Etiquetas)
+
+```bash
+git tag v1.0.0                      #  Crear un tag ligero
+git tag -a v1.0.0 -m "Versión 1.0.0 lista para producción" #  Crear un tag anotado (recomendado, con mensaje)
+
+git tag                             #  Listar todos los tags locales
+git push origin --tags              #  Enviar todos los tags locales al repositorio remoto
+
+git tag -d v1.0.0                   #  Eliminar un tag local
+git push origin :refs/tags/v1.0.0   #  Eliminar un tag remoto
+```
+
 =======
-||||||| b19cab2
-=======
-
-## Uso de llave SSH
-<<<<<<< HEAD
-## Archivo modificado por Giovani, mediante configuracion de llaves ssh.
-
+### Lista de Participantes
 1. Jose Luis Mamani Choque 1314313
 2. andres alanoca parizaca
 3. Edson Juvenal Pilco Condori
@@ -22,380 +145,7 @@
 5. Alexandra Hancco Vargas
 6. **Sandra Vanessa Mamani Chambi**
 7. **Claudio Emerson Vilca Calcina**
-||||||| d655488
-## Archivo modificado por Giovani, mediante configuracion de llaves ssh.
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-### Ordered List
-1. Jose Luis Mamani Choque 1314313
-2. andres alanoca parizaca
-3. Edson Juvenal Pilco Condori
-4. Diethmar Emerson Velez Guimaraes 1517672
-<<<<<<< HEAD
-5. Alexandra Hancco Vargas
-6. **Sandra Vanessa Mamani Chambi** 
-||||||| 5b01a39
-5. Alexandra Hancco Vargas 
-=======
-5. Alexandra Hancco Vargas 
-||||||| parent of 7c36e85 (Agregado mi nombre al README)
----cambio
-Jose Luis Mamani Choque 1314313
-andres 
-**Edson Juvenal Pilco Condori
-||||||| fccc40e
-=======
-<<<<<<< HEAD
-### Ordered List
-1. Jose Luis Mamani Choque 1314313
-2. andres alanoca parizaca
-** 3. Edson Juvenal Pilco Condori **
-4. Diethmar Emerson Velez Guimaraes 1517672
-5. Alexandra Hancco Vargas 
-||||||| parent of 7c36e85 (Agregado mi nombre al README)
----cambio
-Jose Luis Mamani Choque 1314313
-andres alanoca parizaca
-**Edson Juvenal Pilco Condori
-
-
-**Diethmar Emerson Velez Guimaraes**1517672
-
-
-**Alexandra Hancco Vargas** 
-
-
-<<<<<<< HEAD
-Diethmar Emerson Velez Guimaraes 1517672
-
-Alexandra Hancco Vargas
-
-Cambio Sandra Vanessa Mamani Chambi 
-
->>>>>>> 56468dc091233936c83126fb8af9c55d4b8c2e8c
->>>>>>> 7c36e85 (Agregado mi nombre al README)
->>>>>>> b19cab2db7bb401d60425622cda91a09fb145a4c
-||||||| b19cab2
-Diethmar Emerson Velez Guimaraes 1517672
-
-Alexandra Hancco Vargas
-
-Cambio Sandra Vanessa Mamani Chambi 
-
->>>>>>> 56468dc091233936c83126fb8af9c55d4b8c2e8c
->>>>>>> 7c36e85 (Agregado mi nombre al README)
-=======
->>>>>>> 187a6e3e355a0d8f58d81662c55831dc1cc1304f
-||||||| fccc40e
-Diethmar Emerson Velez Guimaraes 1517672
-
-Alexandra Hancco Vargas 
-
->>>>>>> 56468dc091233936c83126fb8af9c55d4b8c2e8c
-=======
----cambio
-Jose Luis Mamani Choque 1314313
-andres alanoca parizaca
-**Edson Juvenal Pilco Condori
-
-Diethmar Emerson Velez Guimaraes 1517672
-
-Alexandra Hancco Vargas
-
-Cambio Sandra Vanessa Mamani Chambi 
-
-
-Elver Mamani Quispe -el pedri 
-
-Claudio  Emerson Vilca Calsina
-
->>>>>>> 56468dc091233936c83126fb8af9c55d4b8c2e8c
->>>>>>> 7c36e85 (Agregado mi nombre al README)
-=======
-### Lista de Participantes
-1. Jose Luis Mamani Choque - 1314313
-2. Andres alanoca parizaca
-3. **Edson Juvenal Pilco Condori**
-4. Diethmar Emerson Velez Guimaraes - 1517672
-5. Alexandra Hancco Vargas
-6. Sandra Vanessa Mamani Chambi
-=======
-## Archivo modificado por Giovani, mediante configuración de llaves SSH.
-
-### Lista de Participantes
-1. Jose Luis Mamani Choque - 1314313
-2. Andres alanoca parizaca
-3. **Edson Juvenal Pilco Condori**
-4. Diethmar Emerson Velez Guimaraes - 1517672
-5. Alexandra Hancco Vargas
-6. Sandra Vanessa Mamani Chambi
->>>>>>> 851106c388400838360a237a8f6d664f584b8888
-7. Cristhian Cc. A.
-8. saduc soncco quispe
-<<<<<<< HEAD
-
-||||||| d655488
->>>>>>> origin/main
->>>>>>> 95065957df9bd1c20a28bdd62638507c3060e096
-=======
-9. Renato Fabrizio Gonzales Olazabal 1462350
-
-=======
-<<<<<<< HEAD
-||||||| 187a6e3
-# p02_ssh
-### Senati
-![alt text](https://www.senati.edu.pe/sites/all/themes/senati_theme/img/logo.svg)
-=======
-
-# p02_ssh
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-||||||| 5b01a39
-=======
-||||||| b19cab2
-=======
-
->>>>>>> d1c0fc4adc9058507fe63862017b2eab0905d725
-## Uso de llave SSH
-<<<<<<< HEAD
-
-## Archivo modificado por Giovani, mediante configuracion de llaves ssh.
-
-### Ordered List
-1. Jose Luis Mamani Choque 1314313
-2. andres alanoca parizaca
-###Bold
-** 3. Edson Juvenal Pilco Condori **
-=======
-<<<<<<< HEAD
-## Archivo modificado por Giovani, mediante configuración de llaves SSH.
-||||||| 187a6e3
-## Archivo modificado por Giovani, mediante configuracion de llaves ssh.
-=======
-<<<<<<< HEAD
-### Ordered List
-1. Jose Luis Mamani Choque 1314313
-2. andres alanoca parizaca
-3. Edson Juvenal Pilco Condori
->>>>>>> d6812a094e4b8e18600d7ef2358d8d6ac5e84c75
-4. Diethmar Emerson Velez Guimaraes 1517672
-5. Alexandra Hancco Vargas 
-||||||| parent of 7c36e85 (Agregado mi nombre al README)
----cambio
-Jose Luis Mamani Choque 1314313
-andres alanoca parizaca
-**Edson Juvenal Pilco Condori
-
-Diethmar Emerson Velez Guimaraes 1517672
-
-<<<<<<< HEAD
-Alexandra Hancco Vargas 
-
-56468dc091233936c83126fb8af9c55d4b8c2e8c
-
-=======
-**Alexandra Hancco Vargas** 
-=======
-<<<<<<< HEAD
-## Archivo modificado por Giovani, mediante configuracion de llaves ssh.
-
-1. Jose Luis Mamani Choque 1314313
-2. andres 
-3. Edson Juvenal Pilco Condori
-4. Diethmar Emerson Velez Guimaraes 1517672
-5. Alexandra Hancco Vargas
-6. **Sandra Vanessa Mamani Chambi** 
-||||||| d655488
-## Archivo modificado por Giovani, mediante configuracion de llaves ssh.
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-### Ordered List
-1. Jose Luis Mamani Choque 1314313
-2. andres 
-3. Edson Juvenal Pilco Condori
-4. Diethmar Emerson Velez Guimaraes 1517672
-<<<<<<< HEAD
-5. Alexandra Hancco Vargas
-6. **Sandra Vanessa Mamani Chambi** 
-||||||| 5b01a39
-5. Alexandra Hancco Vargas 
-=======
-5. Alexandra Hancco Vargas 
-||||||| parent of 7c36e85 (Agregado mi nombre al README)
----cambio
-Jose Luis Mamani Choque 1314313
-andres 
-**Edson Juvenal Pilco Condori
-||||||| fccc40e
-=======
-<<<<<<< HEAD
-### Ordered List
-1. Jose Luis Mamani Choque 1314313
-2. andres 
-** 3. Edson Juvenal Pilco Condori **
-4. Diethmar Emerson Velez Guimaraes 1517672
-5. Alexandra Hancco Vargas 
-||||||| parent of 7c36e85 (Agregado mi nombre al README)
----cambio
-Jose Luis Mamani Choque 1314313
-andres 
-**Edson Juvenal Pilco Condori
-=======
->>>>>>> origin/main
-
-
-**Diethmar Emerson Velez Guimaraes**1517672
-
-
-**Alexandra Hancco Vargas** 
-
-
-<<<<<<< HEAD
-Diethmar Emerson Velez Guimaraes 1517672
-
-Alexandra Hancco Vargas
-
-Cambio Sandra Vanessa Mamani Chambi 
-
->>>>>>> 56468dc091233936c83126fb8af9c55d4b8c2e8c
->>>>>>> 7c36e85 (Agregado mi nombre al README)
->>>>>>> b19cab2db7bb401d60425622cda91a09fb145a4c
-||||||| b19cab2
-Diethmar Emerson Velez Guimaraes 1517672
-
-Alexandra Hancco Vargas
-
-Cambio Sandra Vanessa Mamani Chambi 
-
->>>>>>> 56468dc091233936c83126fb8af9c55d4b8c2e8c
->>>>>>> 7c36e85 (Agregado mi nombre al README)
-=======
->>>>>>> 187a6e3e355a0d8f58d81662c55831dc1cc1304f
-||||||| fccc40e
-Diethmar Emerson Velez Guimaraes 1517672
-
-Alexandra Hancco Vargas 
-
->>>>>>> 56468dc091233936c83126fb8af9c55d4b8c2e8c
-=======
->>>>>>> d6812a094e4b8e18600d7ef2358d8d6ac5e84c75
----cambio
-Jose Luis Mamani Choque 1314313
-andres 
-**Edson Juvenal Pilco Condori
-
-Diethmar Emerson Velez Guimaraes 1517672
-
-Alexandra Hancco Vargas
-<<<<<<< HEAD
-
-Cambio Sandra Vanessa Mamani Chambi 
-
-56468dc091233936c83126fb8af9c55d4b8c2e8c
-7c36e85 (Agregado mi nombre al README)
-
-## Nuevo contenido 
-Jose Luis Mamani Choque **
-
-=======
->>>>>>> d1c0fc4adc9058507fe63862017b2eab0905d725
-
-<<<<<<< HEAD
-### Lista de Participantes
-1. Jose Luis Mamani Choque - 1314313
-2. Andres [Apellido no especificado]
-3. **Edson Juvenal Pilco Condori**
-4. Diethmar Emerson Velez Guimaraes - 1517672
-5. **Alexandra Hancco Vargas**
-6. **Sandra Vanessa Mamani Chambi**
-7. Cristhian Cc. A.
-8. saduc soncco quispe
-9. Renato Fabrizio Gonzales Olazabal 1462350
-||||||| 187a6e3
-=======
-Cambio Sandra Vanessa Mamani Chambi 
->>>>>>> d1c0fc4adc9058507fe63862017b2eab0905d725
-
->>>>>>> 56468dc091233936c83126fb8af9c55d4b8c2e8c
->>>>>>> 7c36e85 (Agregado mi nombre al README)
-=======
-### Lista de Participantes
-1. Jose Luis Mamani Choque - 1314313
-2. Andres [Apellido no especificado]
-3. **Edson Juvenal Pilco Condori**
-4. **Diethmar Emerson Velez Guimaraes** - 1517672
-5. Alexandra Hancco Vargas
-6. Sandra Vanessa Mamani Chambi
->>>>>>> d6812a094e4b8e18600d7ef2358d8d6ac5e84c75
-=======
-## Archivo modificado por Giovani, mediante configuración de llaves SSH.
->>>>>>> 43f9c1f162ca91bf6f4a6e5f31ccccabb61c75de
-
-### Lista de Participantes
-1. Jose Luis Mamani Choque - 1314313
-2. Andres alanoca parizaca
-3. **Edson Juvenal Pilco Condori**
-4. Diethmar Emerson Velez Guimaraes - 1517672
-5. Alexandra Hancco Vargas
-6. Sandra Vanessa Mamani Chambi
->>>>>>> 851106c388400838360a237a8f6d664f584b8888
-7. Cristhian Cc. A.
-8. saduc soncco quispe
-<<<<<<< HEAD
-<<<<<<< HEAD
-9. Marco Arce
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-7b96280d7d3ef3b83cfe2607631eaa4636b394af
-=======
-=======
->>>>>>> d6812a094e4b8e18600d7ef2358d8d6ac5e84c75
->>>>>>> origin
-
-||||||| d655488
->>>>>>> origin/main
->>>>>>> 95065957df9bd1c20a28bdd62638507c3060e096
-=======
-9. Renato Fabrizio Gonzales Olazabal 1462350
-
->>>>>>> d6812a094e4b8e18600d7ef2358d8d6ac5e84c75
->>>>>>> 851106c388400838360a237a8f6d664f584b8888
-<<<<<<< HEAD
->>>>>>> origin
-=======
-=======
->>>>>>> 815add75d4dbbbcc36bd16128138e932a1bfc12e
->>>>>>> origin
-### Senati
-![alt text](https://www.senati.edu.pe/sites/all/themes/senati_theme/img/logo.svg)
-# p02_ssh
-## Uso de llave SSH
-## Archivo modificado por Giovani, mediante configuracion de llaves ssh.
-### **Lista de Participantes:**
-
-1. **Jose Luis Mamani Choque** - 1314313
-2. **andres alanoca parizaca**
-3. **Edson Juvenal Pilco Condori**
-4. **Diethmar Emerson Velez Guimaraes** - 1517672
-5. **Alexandra Hancco Vargas**
-6. **Sandra Vanessa Mamani Chambi**
-<<<<<<< HEAD
-<<<<<<< HEAD
-7. Cristhian Cc. A.
->>>>>>> 43f9c1f162ca91bf6f4a6e5f31ccccabb61c75de
-=======
->>>>>>> d6812a094e4b8e18600d7ef2358d8d6ac5e84c75
-=======
-7. **Renato Fabrizio Gonzales Olazabal** - 1462350
-8. **Cristhian Cc. A.**
-9. **Saduc Soncco Quispe**
-
->>>>>>> a3cc2192e45073893e0c2880c8e697aba7897b53
-saduc soncco quispe
-
+8. Elver Mamani Quispe -el pedri 
+9. Cristhian Cc. A.
+10. saduc soncco quispe
+11. Renato Fabrizio Gonzales Olazabal 1462350
