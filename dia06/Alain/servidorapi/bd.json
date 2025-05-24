@@ -1,0 +1,22 @@
+{
+    "libros":[
+        {
+            "id":1,
+            "nombre":"Caperucita azul",
+            "autor":"Anonimito",
+            "anio":"2000"
+        },
+        {
+            "id":2,
+            "nombre":"Los 3 puerquitos",
+            "autor":"Anomalo",
+            "anio":"2001"
+        },
+        {
+            "id":3,
+            "nombre":"Dulcinea y Rumieto",
+            "autor":"Shakespeare",
+            "anio":"2003"
+        }
+    ]
+}
