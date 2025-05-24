@@ -1,0 +1,44 @@
+{"libros":[
+
+  {
+
+    "id":1,
+
+    "nombre":"Caperucita Roja",
+
+    "autor":"anonimo",
+
+    "anio":"2000"
+
+  },
+
+  {
+
+    "id":2,
+
+    "nombre":"Los 3 cerditos",
+
+    "autor":"anonimo",
+
+    "anio":"2001"
+
+  },
+
+  {
+
+    "id":3,
+
+    "nombre":"Romeo y julieta",
+
+    "autor":"anonimo",
+
+    "anio":"2003"
+
+  }
+
+
+
+]
+
+}
+
