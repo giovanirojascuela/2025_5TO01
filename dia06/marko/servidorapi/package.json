@@ -1,0 +1,18 @@
+{
+  "name": "servidorapi",
+  "version": "1.0.0",
+  "description": "Mi primer aplicacion tipo API",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "author": "Marko",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
