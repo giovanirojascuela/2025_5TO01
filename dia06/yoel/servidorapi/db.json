@@ -1,0 +1,23 @@
+{
+    "libros":[
+        {
+            "id":1,
+            "nombre":"Caperucita roja",
+            "autor":"anonimo",
+            "anonimo":"2000"
+        },
+        {
+            "id":2,
+            "nombre":"Los 3 chanchitos",
+            "autor":"anonimo",
+            "anonimo":"2001"
+
+        },
+        {
+            "id":3,
+            "nombre":"romeo y jilieta",
+            "autor":"anonimo",
+            "anonimo":"2003"
+        }
+    ]
+}
