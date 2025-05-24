@@ -1,0 +1,22 @@
+{
+    "libros":[
+        {
+            "id":1,
+            "nombre":"Caperucita Roja",
+            "author":"anonimo",
+            "anio":"2000"
+        },
+        {
+            "id":2,
+            "nombre":"Los tres cerditos",
+            "author":"anonimo",
+            "anio":"2001"
+        },
+        {
+            "id":3,
+            "nombre":"Romeo y Julieta",
+            "author":"Shakespeare",
+            "anio":"2003"
+        }
+    ]
+}
