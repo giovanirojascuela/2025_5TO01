@@ -19,5 +19,5 @@
 ### Enlaces
 [Guia Mardown](https://www.markdownguide.org)
 ### Insertar Imagen
-![alt text](https://assets.pinterest.com/ext/embed.html?id=848436017338567631.svg)
+![alt text](https://assets.pinterest.com/ext/embed.html?id=848436017338567631)
 
