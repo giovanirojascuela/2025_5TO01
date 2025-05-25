@@ -8,10 +8,14 @@
 1. Ver Peliculas de terror.
 2. Jugar voley.
 3. Programar.
+4. jugar juegos de mesa.
+   
 ###Mis Comidas favoritas(Lista no ordenada)
-- Tallarin.
+- Tallarines con pollo.
 - Pollo a la brasa.
-- Arroz con huevo.
+- lomo saltado.
+- arroz con pollo.
+  
 ### Codigo
 'este es codigo'
 ### Lineas Horizontales
