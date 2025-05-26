@@ -1,6 +1,10 @@
 import express, { json } from 'express';
 import fs from 'fs';
+import bodyParser from "body-parser";
+
 const app = express();
+app.use(bodyParser.json());
+
 const leerArchivos=()=>{
     try{
         const datos=fs.readFileSync("./bd.json", "utf-8");
@@ -18,7 +22,7 @@ const escribirArchivos=(data)=>{
     }catch(error){
         console.log(error);
     }
-}
+};
 /** Crear estado */
 app.get("/", (req, res) => {
     res.send("Bienvenido a mi API LuisDevInger");
@@ -56,6 +60,15 @@ app.put("/libros/:id",(req,res)=>{
         ...data.libros[libroId],
         ...body
     } 
+});
+
+app.delete("/libro/:id", (req,res)=>{
+    const data = leerArchivos();
+    const id = parseInt(req.params.id);
+    const libroId=data.libros.findIndex((libros)=>libros.id===id);
+    data.libros.aplice(libroId,1);
+    escribirArchivos(data);
+    res.json({message: "Libro Eliminado"});
 });
 
 /** Mostrar estado en consola */
