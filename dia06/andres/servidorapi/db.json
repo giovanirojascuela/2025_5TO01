@@ -1,0 +1,34 @@
+{
+  "libros": [
+    {
+      "id": 1,
+      "nombre": "Caperucita",
+      "autor": "Charles Perrault",
+      "anio": 1697
+    },
+    {
+      "id": 2,
+      "nombre": "Chanchito",
+      "autor": "Tradicional",
+      "anio": 1800
+    },
+    {
+      "id": 3,
+      "nombre": "Romeo y Julieta",
+      "autor": "William Shakespeare",
+      "anio": 1597
+    },
+    {
+      "id": 4,
+      "nombre": "la resenata",
+      "autor": "andriu rewalsk",
+      "anio": 1597
+    },
+    {
+      "nombre": "Mi Libro Nuevo historia",
+      "autor": "Autor andriu",
+      "anio": 2025,
+      "id": 6
+    }
+  ]
+}
