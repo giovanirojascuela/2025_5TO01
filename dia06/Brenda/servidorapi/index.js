@@ -1,102 +1,96 @@
 import express from 'express';
 import fs from 'fs';
+import bodyParser from 'body-parser';
 
 const app = express();
-
-// Middleware para poder leer JSON en el body de las peticiones PUT y POST
-app.use(express.json());
+app.use(bodyParser.json());
 
 // Función de lectura de archivo de datos
 const leerArchivo = () => {
   try {
-    const datos = fs.readFileSync("./bd.json", "utf-8"); // Especificamos la codificación UTF-8
+    const datos = fs.readFileSync('./bd.json');
     return JSON.parse(datos);
   } catch (error) {
-    console.error('Error al leer el archivo:', error);
-    return null; // En caso de error devolvemos null para evitar que el código rompa
+    console.log(error);
   }
 };
 
-// Función para guardar cambios en el archivo
+// Función de escritura de archivo de datos
 const escribirArchivo = (data) => {
   try {
-    fs.writeFileSync("./bd.json", JSON.stringify(data, null, 2));
+    fs.writeFileSync('./bd.json', JSON.stringify(data, null, 2));
   } catch (error) {
-    console.error('Error guardando los datos:', error);
+    console.log(error);
   }
 };
 
-/* Crear rutas */
-
-// Ruta de bienvenida
-app.get("/", (req, res) => {
-  res.send("Bienvenido a mi API brenda Desarrollo");
+// Ruta principal
+app.get('/', (req, res) => {
+  res.send('Bienvenido a mi API Brenda Desarrollo');
 });
 
 // Obtener todos los libros
-app.get("/libros", (req, res) => {
+app.get('/libros', (req, res) => {
   const data = leerArchivo();
-  if (data) {
-    res.json(data.libros);
-  } else {
-    res.status(500).send("Error leyendo la base de datos");
-  }
+  res.json(data.libros);
 });
 
-// Obtener libro por ID
-app.get("/libros/:id", (req, res) => {
+// Obtener un libro por ID
+app.get('/libros/:id', (req, res) => {
   const data = leerArchivo();
-  if (!data) return res.status(500).send("Error leyendo la base de datos");
-
   const id = parseInt(req.params.id);
-  const libro = data.libros.find(libro => libro.id === id);
-
-  if (libro) {
-    res.json(libro);
-  } else {
-    res.status(404).send("Libro no encontrado");
-  }
+  const libro = data.libros.find((libro) => libro.id === id);
+  res.json(libro);
 });
 
 // Crear un nuevo libro
-app.post("/libros", (req, res) => {
+app.post('/libros', (req, res) => {
   const data = leerArchivo();
   const body = req.body;
-
   const nuevoLibro = {
     id: data.libros.length + 1,
     ...body,
   };
-
   data.libros.push(nuevoLibro);
   escribirArchivo(data);
-
   res.json(nuevoLibro);
 });
 
 // Actualizar un libro por ID
-app.put("/libros/:id", (req, res) => {
+app.put('/libros/:id', (req, res) => {
   const data = leerArchivo();
-  if (!data) return res.status(500).send("Error leyendo la base de datos");
-
-  const id = parseInt(req.params.id);
   const body = req.body;
+  const id = parseInt(req.params.id);
+  const libroid = data.libros.findIndex((libro) => libro.id === id);
 
-  const libroIndex = data.libros.findIndex(libro => libro.id === id);
-  if (libroIndex === -1) {
-    return res.status(404).send("Libro no encontrado");
+  if (libroid !== -1) {
+    data.libros[libroid] = {
+      ...data.libros[libroid],
+      ...body,
+    };
+    escribirArchivo(data);
+    res.json(data.libros[libroid]);
+  } else {
+    res.status(404).json({ message: 'Libro no encontrado' });
   }
-
-  // Actualizamos el libro con los datos enviados
-  data.libros[libroIndex] = { ...data.libros[libroIndex], ...body };
-
-  // Guardar cambios en el archivo
-  escribirArchivo(data);
-
-  res.json(data.libros[libroIndex]);
 });
 
-/* Mostrar estado en consola */
+// Eliminar un libro por ID
+app.delete('/libros/:id', (req, res) => {
+  const data = leerArchivo();
+  const id = parseInt(req.params.id);
+  const libroId = data.libros.findIndex((libro) => libro.id === id);
+
+  if (libroId !== -1) {
+    data.libros.splice(libroId, 1);
+    escribirArchivo(data);
+    res.json({ message: 'Libro eliminado' });
+  } else {
+    res.status(404).json({ message: 'Libro no encontrado' });
+  }
+});
+
+// Iniciar el servidor
 app.listen(3000, () => {
   console.log('Escuchando servidor en puerto 3000');
 });
