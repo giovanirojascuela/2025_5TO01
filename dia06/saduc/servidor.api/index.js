@@ -1,6 +1,8 @@
 import express from 'express';
 import fs from 'fs';
+import bodyParser from "body-parser";
 const app=express();
+app.use(bodyParser.json());
 //Funcion de Lectura de archivo de datos
 const leerArchivo=()=>{
     try{
@@ -58,6 +60,16 @@ app.put("/libros/:id",(req,res)=>{
         ...body
     }
 });
+app.delete("/libros/:id",(req,res)=>{
+    const data =leerArchivo();
+    const id=parseInt(req.params.id);
+    const libroId=data.libros.findIndex((libro)=>libro.id===id);
+    data.libros.splice(libroId,1);
+    escribirArchivo(data);
+    res.json({message: "libros eliminado"});
+ 
+}
+);
 /*Mostrar estado en consola*/
 app.listen(3000,()=>{
     console.log('Escuchando servidor en puerto 3000')

@@ -7,7 +7,7 @@
   "scripts": {
     "dev":"nodemon index.js"
   },
-  "author": "saduci",
+  "author": "saduc",
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0"
