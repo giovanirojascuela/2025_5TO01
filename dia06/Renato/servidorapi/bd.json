@@ -1,0 +1,22 @@
+{
+    "libros":[
+        {
+            "id":1,
+            "nombre":"Wolf",
+            "autor":"anoanimo",
+            "anio":"2000"
+        },
+        {
+            "id":2,
+            "nombre":"caperucita",
+            "autor":"anoanimo",
+            "anio":"2004"
+        },
+        {
+            "id":3,
+            "nombre":"3 chanchitos",
+            "autor":"anoanimo",
+            "anio":"2001"
+        }
+    ]
+}
