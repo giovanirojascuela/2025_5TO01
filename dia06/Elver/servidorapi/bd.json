@@ -1,1 +1,22 @@
-{"libros":[{"id":1,"nombre":"Caperosita roja","autor":"anonimo","anio":"2000"},{"id":2,"nombre":"los 3 cerdos","autor":"anonimo","anio":"2001"},{"id":3,"nombre":"Romeo y julieta","autor":"Shakespeare","anio":"2002"},{"id":4}]}
+{
+  "libros": [
+    {
+      "id": 1,
+      "nombre": "Caperosita roja",
+      "autor": "anonimo",
+      "anio": "2000"
+    },
+    {
+      "id": 2,
+      "nombre": "los 3 cerdos",
+      "autor": "anonimo",
+      "anio": "2001"
+    },
+    {
+      "id": 3,
+      "nombre": "Romeo y julieta",
+      "autor": "Shakespeare",
+      "anio": "2002"
+    }
+  ]
+}
