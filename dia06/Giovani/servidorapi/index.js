@@ -1,6 +1,8 @@
 import express from 'express';
 import fs from 'fs';
+import bodyParser from "body-parser";
 const app=express();
+app.use(bodyParser.json());
 //Funcion de Lectura de archivo de datos
 const leerArchivo=()=>{
     try{
@@ -39,6 +41,8 @@ app.get("/libros/:id",(req,res)=>{
 app.post("/libros",(req,res)=>{
     const data=leerArchivo();
     const body=req.body;
+    console.log("--------------->")
+    console.log(body)
     const nuevoLibro={
         id: data.libros.length+1,
         ...body,
@@ -57,6 +61,14 @@ app.put("/libros/:id",(req,res)=>{
         ...data.libros[libroId],
         ...body
     }
+});
+app.delete("/libros/:id",(req,res)=>{
+    const data =leerArchivo();
+    const id=parseInt(req.params.id);
+    const libroId=data.libros.findIndex((libro)=>libro.id===id);
+    data.libros.splice(libroId,1);
+    escribirArchivo(data);
+    res.json({message: "Libro eleminado"});
 });
 /*Mostrar estado en consola*/
 app.listen(3000,()=>{
