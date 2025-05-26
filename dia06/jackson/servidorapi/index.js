@@ -1,8 +1,14 @@
-import express, { json } from 'express';
+import express from 'express';
 import fs from 'fs';
+import bodyParser from 'body-parser'; 
 
 const app = express();
-app.use(json());
+
+// Middleware para leer JSON en las solicitudes
+app.use(bodyParser.json()); 
+
+
+// Usa solo una de estas, no ambas.
 
 const leerArchivos = () => {
   try {
@@ -10,65 +16,94 @@ const leerArchivos = () => {
     return JSON.parse(datos);
   } catch (error) {
     console.log(error);
+    return { libros: [] }; 
   }
 };
 
-/** Función de escritura de archivo de datos */
 const escribirArchivos = (data) => {
   try {
-    fs.writeFileSync("./bd.json", JSON.stringify(data));
+    fs.writeFileSync("./bd.json", JSON.stringify(data, null, 2));
   } catch (error) {
     console.log(error);
   }
 };
 
-/** Crear estado */
+
 app.get("/", (req, res) => {
-  res.send("Bienvenido a mi API LuisDevInger");
+  res.send("Bienvenido a mi API jackson");
 });
 
-// CRUD - Lectura general
+// Obtener todos los libros
 app.get("/libros", (req, res) => {
   const data = leerArchivos();
   res.json(data.libros);
 });
 
-// Lectura por ID
+// Obtener un libro por ID
 app.get("/libros/:id", (req, res) => {
   const data = leerArchivos();
   const id = parseInt(req.params.id);
   const libro = data.libros.find((libro) => libro.id === id);
+
+  if (!libro) {
+    return res.status(404).json({ message: "Libro no encontrado" });
+  }
+
   res.json(libro);
 });
 
-// Crear libro
+// Crear un nuevo libro
 app.post("/libros", (req, res) => {
   const data = leerArchivos();
   const body = req.body;
+
   const nuevoLibro = {
-    id: data.libros.length + 1,
+    id: data.libros.length > 0 ? data.libros[data.libros.length - 1].id + 1 : 1,
     ...body
   };
+
   data.libros.push(nuevoLibro);
   escribirArchivos(data);
   res.json(nuevoLibro);
 });
 
-// Actualización
+// Actualizar un libro
 app.put("/libros/:id", (req, res) => {
   const data = leerArchivos();
   const body = req.body;
   const id = parseInt(req.params.id);
+
   const libroId = data.libros.findIndex((libros) => libros.id === id);
+
+  if (libroId === -1) {
+    return res.status(404).json({ message: "Libro no encontrado" });
+  }
+
   data.libros[libroId] = {
     ...data.libros[libroId],
     ...body
   };
+
   escribirArchivos(data);
   res.json(data.libros[libroId]);
 });
 
-/** Mostrar estado en consola */
+// Eliminar un libro
+
+
+app.delete("/libros/:id", (req, res) => {
+  const data = leerArchivos();
+  const id = parseInt(req.params.id);
+  const libroId = data.libros.findIndex((libro) => libro.id === id);
+  data.libros.splice(libroId, 1);
+  escribirArchivos(data);
+  res.json({ message: "libro eliminado" });
+});
+
+
+
+// Iniciar servidor
+
 app.listen(3000, () => {
-  console.log('Escuchando servidor en puerto 3000');
+  console.log("Escuchando servidor en puerto 3000");
 });
