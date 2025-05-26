@@ -1,6 +1,6 @@
 
 PRACTICA 01
-1 Agregar sus nombres y apellidos el repositorio. 
+1 Jheny Edith Quispe Chinchercoma. 
 	p02_ssh/dia_01
 en README.md:
 
