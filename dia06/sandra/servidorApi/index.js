@@ -1,6 +1,9 @@
 import express from 'express';
 import fs from 'fs';
+import bodyParse from "body-parser";
+
 const app=express();
+app.use(bodyParse.json());
 //Funcion de lectura de archivo de datoss
 const leerArchivo=()=>{
   try{
@@ -60,6 +63,14 @@ app.put("/libros/:id",(req,res)=>{
   }
 });
 
+app.delete("/libros/:id",(req,res)=>{
+  const data = leerArchivo();
+  const id=parseInt(req.params.id);
+  const libroId=data.libros.findIndex((libro)=>libro.id===id);
+  data.libro.splice(libroId,1);
+  escribirArchivo(data);
+  res.json({massage: "libro eliminado"});
+});
 /*Mostrar estado en consola*/
 
 app.listen(3000,()=>{
