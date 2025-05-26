@@ -1,140 +1,64 @@
 import express from 'express';
-
 import fs from 'fs';
-
 const app=express();
-
-//Funcion de lectura de archivo de datos
-
+//Funcion de Lectura de archivo de datos
 const leerArchivo=()=>{
-
-  try{
-
-    const datos=fs.readFileSync("./bd.json");
-
-    return JSON.parse(datos);
-
-  } catch(error){
-
-    console.log(error);
-
-  }
-
-  
-
-  
-
-
-
-}
-
-const escribirArchivo = () => {
-
-  try {
-
-    const datos = fs.writeFileSync("./bd.json", JSON.
-
-      stringify(data));
-
-    
-
-  } catch (error) {
-
-    console.log(error);
-
-    
-
-  }
-
-
-
-}
-
+    try{
+        const datos=fs.readFileSync("./bd.json");
+        //console.log(JSON.parse(datos));
+        return JSON.parse(datos)
+    } catch(error){
+        console.log(error);
+    } 
+};
+//Funcion de Escritura de archivo de datos
 //leerArchivo();
-
-
-
-
-
-/*Crear rutas */
-
+const escribirArchivo=(data)=>{
+    try{
+        fs.writeFileSync("./bd.json",JSON.stringify(data));
+    } catch(error){
+        console.log(error);
+    } 
+};
+/*Crear rutas*/
 app.get("/",(req,res)=>{
-
-  res.send("Bienvenido a mi API Laurens Desarrollo");
-
+    res.send("Bienvenido a mi API saduc - Desarrollo");
 });
-
-
-
 //Vamos creando un CRUD API
-
 app.get("/libros",(req,res)=>{
-
-  const data=leerArchivo();
-
-  res.json(data.libros);
-
+    const data=leerArchivo();
+    res.json(data.libros);
 });
-
-
-
 //Lectura por ID
-
 app.get("/libros/:id",(req,res)=>{
-
-  const data=leerArchivo();
-
-  const id=parseInt(req.params.id);
-
-  const libro=data.libros.find((libro)=>libro.id===id);
-
-  res.json(libro)
-
+    const data=leerArchivo();
+    const id=parseInt(req.params.id);
+    const libro=data.libros.find((libro)=>libro.id===id);
+    res.json(libro);
 });
 app.post("/libros",(req,res)=>{
-
-  const data=leerArchivo();
-
-  const body=(req.body.id);
-
-  const nuevoLIbro={
-    id: data.libros.length+1,
-    ...body,
-  };
-  data.libros,push(nuevoLIbro);
-  escribirArchivo(data);
-  res.json(libro)
-
+    const data=leerArchivo();
+    const body=req.body;
+    const nuevoLibro={
+        id: data.libros.length+1,
+        ...body,
+    };
+    data.libros.push(nuevoLibro);
+    escribirArchivo(data);
+    res.json(nuevoLibro);
 });
-
-
-
+//Actualizacion
 app.put("/libros/:id",(req,res)=>{
-
-  const data=leerArchivo();
-
-  const body=req.body;
-
-  const id=parseInt(req.params.id);
-
-  const libroid=data.libros.findIndex((libro)=>libro.id===id);
-
-  data.libros[libroid]={
-
-    ...data.libros[libroid],
-
-    ...body
-
-  }
-
-})
-
-
-
-/*mostrar estado en consola */
-
+    const data=leerArchivo();
+    const body=req.body;
+    const id=parseInt(req.params.id);
+    const libroId=data.libros.findIndex((libro)=>libro.id===id);
+    data.libros[libroId]={
+        ...data.libros[libroId],
+        ...body
+    }
+});
+/*Mostrar estado en consola*/
 app.listen(3000,()=>{
-
-  console.log('Escuchando servidor en puerto 3000')
-
+    console.log('Escuchando servidor en puerto 3000')
 });

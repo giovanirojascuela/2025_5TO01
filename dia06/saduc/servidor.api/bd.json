@@ -1,44 +1,16 @@
-{"libros":[
-
-  {
-
-    "id":1,
-
-    "nombre":"Caperucita Roja",
-
-    "autor":"anonimo",
-
-    "anio":"2000"
-
-  },
-
-  {
-
-    "id":2,
-
-    "nombre":"Los 3 cerditos",
-
-    "autor":"anonimo",
-
-    "anio":"2001"
-
-  },
-
-  {
-
-    "id":3,
-
-    "nombre":"Romeo y julieta",
-
-    "autor":"anonimo",
-
-    "anio":"2003"
-
-  }
-
-
-
-]
-
-}
-
+{"libros":[{
+  "id":1,
+  "nombre":"Caperucita Roja",
+  "autor":"anonimo",
+  "anio":"2000"},
+  {"id":2,
+  "nombre":"Los 3 chanchitoa",
+  "autor":"anonimo",
+  "anio":"2001"},
+  {"id":3,
+  "nombre":"Romeo y Julieta",
+  "autor":"Shakespeare",
+  "anio":"2003"},
+  {"id":4},
+  {"id":5}
+  ]}
