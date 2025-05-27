@@ -1,14 +1,19 @@
 {
-  "name": "2025_5to01",
+  "name": "jhon_rutas",
   "version": "1.0.0",
-  "description": "![alt text](https://www.senati.edu.pe/sites/all/themes/senati_theme/img/logo.svg)",
-  "main": "index.js",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodemon ./src/app.js"
   },
-  "author": "Brenda",
+  "keywords":[],
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon":"3.1.10"
   }
 }
