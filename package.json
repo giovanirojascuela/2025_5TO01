@@ -1,0 +1,16 @@
+{
+  "name": "2025_5to01",
+  "version": "1.0.0",
+  "description": "![alt text](https://www.senati.edu.pe/sites/all/themes/senati_theme/img/logo.svg)",
+  "main": "index.js",
+  "type": "module",
+
+  "scripts": {
+  "start": "nodemon ./dia07/andres_rutas/src/app.js"
+},
+  "author": "andres",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
