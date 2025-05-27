@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "name": "rutas_yoel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "star": "nodemon ./src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "demon": "^0.0.1",
+    "nodemon": "^3.1.10"
+  }
+}
