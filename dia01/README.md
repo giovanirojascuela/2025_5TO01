@@ -7,3 +7,6 @@ PRACTICA 01
 
 1. *Diethmar Emerson Velez Calla*  
    p02_ssh/dia_01
+
+1. *Elver Mamani Quispe*
+   p02_ssh/dia_01
