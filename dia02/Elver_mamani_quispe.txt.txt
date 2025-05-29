@@ -1,0 +1,1 @@
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICShSB31nTCe5zmm6ZoAOTGuRzQm60xCB6gXjC7iuyzU bladielvermamani@gmail.com
