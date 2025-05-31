@@ -1,0 +1,19 @@
+{
+  "name": "servidorapi",
+  "version": "1.0.0",
+  "description": "Mi primera aplicacion a mi API Brenda ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "author": "Brenda",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
