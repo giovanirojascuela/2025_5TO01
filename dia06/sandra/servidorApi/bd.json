@@ -1,0 +1,22 @@
+{
+    "libros":[
+        {
+            "id":1,
+            "nombre":"caperusita roja",
+            "autor":"anonimo",
+            "anio":"2000"
+        },
+        {
+            "id":2,
+            "nombre":"los 3 chanchitos",
+            "autor":"anonimo",
+            "anio":"2001" 
+        },
+        {
+            "id":3,
+            "nombre":"Rome y Julieta",
+            "autor":"Shakespeare",
+            "anio":"2003"
+        }
+    ]
+}
