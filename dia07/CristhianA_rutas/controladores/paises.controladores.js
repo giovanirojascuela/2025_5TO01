@@ -12,4 +12,4 @@ export const modificarPais = (req,res)=>{
 }
 export const eliminarPais = (req,res)=>{
     res.send("Funcion de eliminar PAISES")
-}
+};
