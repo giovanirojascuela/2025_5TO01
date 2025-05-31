@@ -1,22 +1,28 @@
 {
-    "libros":[
-        {
-            "id":1,
-            "nombre":"Caperucita Roja",
-            "author":"anonimo",
-            "anio":"2000"
-        },
-        {
-            "id":2,
-            "nombre":"Los tres cerditos",
-            "author":"anonimo",
-            "anio":"2001"
-        },
-        {
-            "id":3,
-            "nombre":"Romeo y Julieta",
-            "author":"Shakespeare",
-            "anio":"2003"
-        }
-    ]
+  "libros": [
+    {
+      "id": 1,
+      "nombre": "Caperucita Roja",
+      "autor": "anonimo",
+      "anio": "2000"
+    },
+    {
+      "id": 2,
+      "nombre": "Romeo y Julieta",
+      "autor": "Shakespeare",
+      "anio": "2003"
+    },
+    {
+      "id": 3,
+      "nombre": "El principito",
+      "autor": "Antoine de Saint-Exupéry",
+      "anio": "1943"
+    },
+    {
+      "id": 4,
+      "nombre": "Don Quijote de la Mancha",
+      "autor": "Miguel de Cervantes",
+      "anio": "1605"
+    }
+  ]
 }

@@ -1,74 +1,77 @@
-import express, { json } from 'express';
+import express from 'express';
 import fs from 'fs';
 import bodyParser from "body-parser";
 
 const app = express();
 app.use(bodyParser.json());
 
-const leerArchivos=()=>{
+/**Funcion de Lectura de archivo de datos */
+const leerArchivo=()=>{
     try{
-        const datos=fs.readFileSync("./bd.json", "utf-8");
+        const datos=fs.readFileSync("./bd.json" , "utf-8");
         //console.log(JSON.parse(datos));
         return JSON.parse(datos)
-    }catch(error){
+    } catch(error){
         console.log(error);
     }
 };
 /**Funcion de Escritura de archivo de datos */
 //leer archivos();
-const escribirArchivos=(data)=>{
+const escribirArchivo=(data)=>{
     try{
         fs.writeFileSync("./bd.json",JSON.stringify(data));
-    }catch(error){
+    } catch(error){
         console.log(error);
     }
 };
-/** Crear estado */
-app.get("/", (req, res) => {
+/** Crear rutas */
+app.get("/",(req,res)=>{
     res.send("Bienvenido a mi API LuisDevInger");
 });
 //Vamos a crear un CRUD API
-app.get("/libros", (req, res) => {
-    const data=leerArchivos();
+app.get("/libros",(req,res)=>{
+    const data=leerArchivo();
     res.json(data.libros);
 });
 //Lectura por ID
-app.get("/libros/:id", (req, res) => {
-    const data=leerArchivos();
+app.get("/libros/:id",(req,res)=>{
+    const data=leerArchivo();
     const id=parseInt(req.params.id);
     const libro=data.libros.find((libro)=>libro.id===id);
     res.json(libro);
 });
 app.post("/libros",(req,res)=>{
-    const data=leerArchivos();
+    const data=leerArchivo();
     const body=req.body;
+    console.log("--------------->")
+    console.log(body)
     const nuevoLibro={
-        id: data.libros.lenght+1,
+        id: data.libros.length+1,
         ...body,
     };
     data.libros.push(nuevoLibro);
-    escribirArchivos(data);
+    escribirArchivo(data);
     res.json(nuevoLibro);
 });
 //Actualizacion
 app.put("/libros/:id",(req,res)=>{
-    const data=leerArchivos();
+    const data=leerArchivo();
     const body=req.body;
     const id=parseInt(req.params.id);
-    const libroId=data.libros.findIndex((libros)=>libros.id===id);
+    const libroId=data.libros.findIndex((libro)=>libro.id===id);
     data.libros[libroId]={
         ...data.libros[libroId],
         ...body
-    } 
+    }
 });
 
-app.delete("/libro/:id", (req,res)=>{
-    const data = leerArchivos();
-    const id = parseInt(req.params.id);
-    const libroId=data.libros.findIndex((libros)=>libros.id===id);
-    data.libros.aplice(libroId,1);
-    escribirArchivos(data);
-    res.json({message: "Libro Eliminado"});
+app.delete("/libros/:id",(req,res)=>{
+    const data =leerArchivo();
+    const id=parseInt(req.params.id);
+    const libroId=data.libros.findIndex((libro)=>libro.id===id);
+    data.libros.splice(libroId,1);
+    escribirArchivo(data);
+    res.json({message: "Libro eleminado"});
 });
 
 /** Mostrar estado en consola */
