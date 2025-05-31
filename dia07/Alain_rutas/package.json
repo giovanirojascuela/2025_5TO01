@@ -1,0 +1,21 @@
+{
+  "name": "alain_rutas",
+  "version": "1.0.0",
+  "description": "![alt text](https://www.senati.edu.pe/sites/all/themes/senati_theme/img/logo.svg)",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "index.js"
+  },
+  "license": "ISC",
+  "author": "alain",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {}
+}
