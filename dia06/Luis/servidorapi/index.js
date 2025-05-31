@@ -23,6 +23,7 @@ const escribirArchivo=(data)=>{
     } catch(error){
         console.log(error);
     }
+    
 };
 /** Crear rutas */
 app.get("/",(req,res)=>{
