@@ -2,6 +2,9 @@
 PRACTICA 01
 1. Jheny Edith Quispe Chinchercoma  
    p02_ssh/dia_01
+   
+1. emerson vilca calcina 
+   p02_ssh/dia_01
 
 1. Brenda Shiamira Lopez Layme
 
