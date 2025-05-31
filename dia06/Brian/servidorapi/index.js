@@ -1,28 +1,36 @@
 import express from 'express';
 import fs from 'fs';
+import bodyParser from "body-parser";
 
 const app = express();
+app.use(bodyParser.json()); // Fixed the syntax for using body-parser
 
-// Middleware para poder leer JSON en el body de las peticiones PUT y POST
-app.use(express.json());
-
-// Función de lectura de archivo de datos
+// Function to read data from the JSON file
 const leerArchivo = () => {
     try {
-        const datos = fs.readFileSync("./bd.json", "utf-8"); // Es buena práctica especificar la codificación
+        const datos = fs.readFileSync("./bd.json", "utf-8"); // Specify encoding for better practice
         return JSON.parse(datos);
     } catch (error) {
         console.error('Error al leer el archivo:', error);
-        return null; // En caso de error devolvemos null para evitar que el código rompa
+        return null; // Return null to avoid breaking the code
     }
 };
 
-/* Crear rutas */
+// Function to write data to the JSON file
+const escribirArchivo = (data) => {
+    try {
+        fs.writeFileSync("./bd.json", JSON.stringify(data, null, 2));
+    } catch (error) {
+        console.error('Error guardando el archivo:', error);
+    }
+};
+
+/* Create routes */
 app.get("/", (req, res) => {
-    res.send("Bienvenido a mi API brenda Desarrollo");
+    res.send("Bienvenido a mi API Brenda Desarrollo");
 });
 
-// Obtener todos los libros
+// Get all books
 app.get("/libros", (req, res) => {
     const data = leerArchivo();
     if (data) {
@@ -31,18 +39,23 @@ app.get("/libros", (req, res) => {
         res.status(500).send("Error leyendo la base de datos");
     }
 });
-app.post("/libros",(req,res)=>{
-    const data=leerArchivo();
-    const body=req.body;
-    const nuevoLibro={
-        id: data.libros.length+1,
+
+// Add a new book
+app.post("/libros", (req, res) => {
+    const data = leerArchivo();
+    const body = req.body;
+
+    const nuevoLibro = {
+        id: data.libros.length + 1,
         ...body,
     };
+
     data.libros.push(nuevoLibro);
     escribirArchivo(data);
     res.json(nuevoLibro);
 });
-// Lectura por ID
+
+// Get book by ID
 app.get("/libros/:id", (req, res) => {
     const data = leerArchivo();
     if (!data) return res.status(500).send("Error leyendo la base de datos");
@@ -57,7 +70,7 @@ app.get("/libros/:id", (req, res) => {
     }
 });
 
-// Actualización por ID
+// Update book by ID
 app.put("/libros/:id", (req, res) => {
     const data = leerArchivo();
     if (!data) return res.status(500).send("Error leyendo la base de datos");
@@ -70,22 +83,33 @@ app.put("/libros/:id", (req, res) => {
         return res.status(404).send("Libro no encontrado");
     }
 
-    // Actualizamos el libro con los datos enviados
+    // Update the book with the provided data
     data.libros[libroIndex] = {
         ...data.libros[libroIndex],
         ...body
     };
 
-    // Guardar cambios en el archivo (importante!)
-    try {
-        fs.writeFileSync("./bd.json", JSON.stringify(data, null, 2));
-        res.json(data.libros[libroIndex]);
-    } catch (error) {
-        res.status(500).send("Error guardando los datos");
-    }
+    // Save changes to the file
+    escribirArchivo(data);
+    res.json(data.libros[libroIndex]);
 });
 
-/* Mostrar estado en consola */
+// Delete book by ID
+app.delete("/libros/:id", (req, res) => {
+    const data = leerArchivo();
+    const id = parseInt(req.params.id);
+    
+    const libroIndex = data.libros.findIndex(libro => libro.id === id);
+    if (libroIndex === -1) {
+        return res.status(404).send("Libro no encontrado");
+    }
+
+    data.libros.splice(libroIndex, 1);
+    escribirArchivo(data);
+    res.json({ message: "Libro eliminado" });
+});
+
+/* Start the server */
 app.listen(3000, () => {
     console.log('Escuchando servidor en puerto 3000');
 });
