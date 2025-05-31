@@ -1,6 +1,18 @@
 
 PRACTICA 01
-1 Jheny Edith Quispe Chinchercoma. 
-	p02_ssh/dia_01
-en README.md:
+1. Jheny Edith Quispe Chinchercoma  
+   p02_ssh/dia_01
 
+1. Brenda Shiamira Lopez Layme
+
+1. *Diethmar Emerson Velez Calla*  
+   p02_ssh/dia_01
+
+1. *Elver Mamani Quispe*
+   p02_ssh/dia_01
+
+1. *Erick Brady AlvareZ Quispe*
+   p02_ssh/dia_01
+
+1. *Alain Cristhiam Chambi Turpo
+   p02_ssh/dia_01
