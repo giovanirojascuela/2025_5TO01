@@ -1,29 +1,12 @@
-import { Router     } from "express";
-import { crearPais, eliminarPais, getPaises, modificarPais } from "../controladores/paises.controladores.js";
-const paisesRouter=Router();
+import { Router } from "express";
+import { crearPais, eliminarPais, getPais, getPaises, modificarPais } from "../controladores/paises.controlador.js";
 
-paisesRouter.get("/",getPaises);
-paisesRouter.get("/",getPaises);
-paisesRouter.get("/",crearPais);
-paisesRouter.get("/",modificarPais);
-paisesRouter.get("/",eliminarPais);
+const paisesRouter = Router();
 
-paisesRouter.get("/:id",(req,res)=>{
-    res.send("paises nnnnnnnn");
-
-});
-paisesRouter.get("/:id",(req,res)=>{
-    res.send("Creo pais");
-
-});
-paisesRouter.get("/:id",(req,res)=>{
-    res.send("Modifico pais nn");
-
-});
-paisesRouter.get("/:id",(req,res)=>{
-    res.send("Elimino pais nn");
-
-});
-
+paisesRouter.get("/", getPaises);
+paisesRouter.get("/:id", getPais);
+paisesRouter.post("/", crearPais);
+paisesRouter.put("/:id", modificarPais);
+paisesRouter.delete("/:id", eliminarPais);
 
 export default paisesRouter;
