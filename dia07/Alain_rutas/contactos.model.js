@@ -19,4 +19,16 @@ Contacto.crearNuevo=(nuevoContacto,result)=>{
         });
     });
 };
+Contacto.buscarAll=(titulo,result)=>{
+    let query="SELECT *FROM contactos";
+    sql.query(query,(err,res)=>{
+        if(err){
+            console.log("error",err);
+            result(err,null);
+            return;
+        }
+        console.log("Contactos:",res);
+        resutl(null,res);
+    });
+};
 module.export=Contacto;
