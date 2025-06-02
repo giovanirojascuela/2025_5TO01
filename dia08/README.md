@@ -1,5 +1,6 @@
 ## node.js y API
-- Se debe crear un carpeta con su nombre, donde van ha guardar el proyecto.
+- Rutas y consultas.
+
 ### 1. Configuración de Llaves SSH y Git (Laboratorio)
 
 Asumiendo que las llaves SSH ya están en una USB (`id_ed25519` y `id_ed25519.pub`), y solo necesitan copiarlas y configurar Git.
