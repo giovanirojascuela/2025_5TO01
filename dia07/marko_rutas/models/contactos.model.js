@@ -19,4 +19,16 @@ Contacto.crearNuevo = (nuevoContacto, result) => {
         });
     });
 };
-module.export = Contacto;
+ContactoModel.getAll=(req,res)=>{
+    let query="SELECT * FROM contactos";
+    sql.query(query,(err,res)=>{
+        if(err){
+            console.log("error",err);
+            result(err,null);
+            return;
+        }
+        console.log("Contactos:",res);
+        result(null,res);
+    });
+};
+export default ContactoModel;

@@ -1,4 +1,4 @@
-import Contacto from "../models/contactos.model";
+import Contacto from "../models/contactos.model.js";
 
 exports.create = (req, res) => {
     if (!req.body) {
@@ -15,6 +15,15 @@ exports.create = (req, res) => {
                 message:
                     err.message || "error"
             });
+        else res.send(data);
+    });
+};
+exports.buscarAll=(req,res)=>{
+    Contacto.geAll(titulo,(err,data)=>{
+        if(err)
+            res.status(500).send({message:
+                err.message||"error"
+        });
         else res.send(data);
     });
 };
