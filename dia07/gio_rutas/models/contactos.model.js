@@ -1,12 +1,12 @@
-import sql from "./conexion.js";
+import conexion from "./conexion.js";
 
-const Contacto=function(contacto){
+const ContactoModel=function(contacto){
     this.nombre=contacto.nombre;
     this.apellido=contacto.apellido;
     this.profesion=contacto.profesion;
 };
-Contacto.crearNuevo=(nuevoContacto,result)=>{
-    sql.query("INSERT INTO contactos SET ?",nuevoContacto,(err,res)=>{
+ContactoModel.crearNuevo=(nuevoContacto,result)=>{
+    conexion.query("INSERT INTO contactos SET ?",nuevoContacto,(err,res)=>{
         if(err){
             console.log("error",err);
             result(err,null);
@@ -17,4 +17,16 @@ Contacto.crearNuevo=(nuevoContacto,result)=>{
         });
     });
 };
-module.export=Contacto;
+ContactoModel.getAll=(titulo,result)=>{
+    let query="SELECT *FROM contactos";
+    conexion.query(query,(err,res)=>{
+    if(err){
+        console.log("error",err);
+        result(err,null);
+        return;
+    }
+    console.log("Contactos:",res);
+    result(null,res);
+    });
+};
+export default ContactoModel;
