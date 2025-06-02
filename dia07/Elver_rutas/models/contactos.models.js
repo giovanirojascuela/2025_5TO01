@@ -17,4 +17,29 @@ Contacto.crearNuevo=(nuevoContacto,result)=>{
         });
     });
 };
-module.exports=Contacto;
+Contacto.getAll=(titulo,result)=>{
+    let query="SELECT *FROM contactos";
+    sql.query(query,(err,res)=>{
+        if (err){
+            console.log("error",err);
+            result(err,null);
+            return;
+        }
+        console.log("Contactos:",res);
+        result(null,res);
+     });
+};
+Contacto.buscarAll=(titulo,result)=>{
+    let query="SELECT * FROM contactos";
+    sql.query(query,(err,res)=>{
+        if(err){
+            console.log("error",err);
+            result(err,null);
+            return;
+        }
+        console.log("Contactos:",res);
+        result(null,res);
+    });
+};
+export default Contacto;
+//module.export=Contacto;
