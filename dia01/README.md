@@ -13,3 +13,5 @@ PRACTICA 01
 
 1. *Erick Brady AlvareZ Quispe*
    p02_ssh/dia_01
+
+1. Jhon Rinaldo Quispe Flores
