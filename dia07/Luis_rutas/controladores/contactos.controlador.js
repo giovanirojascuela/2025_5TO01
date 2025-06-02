@@ -1,5 +1,5 @@
 import database from "../config/database.js";
-import contacto from "../models/contactos.models.js";
+import Contacto from "../models/contactos.models.js"; 
 
 exports.create = (req, res) => {
   if (!req.body) {
@@ -7,13 +7,13 @@ exports.create = (req, res) => {
     return;
   }
 
-  const contacto = new Contacto({
+  const nuevoContacto = new Contacto({
     nombre: req.body.nombre,
     apellidos: req.body.apellidos,
     profesion: req.body.profesion
   });
 
-  Contacto.create(contacto, (err, data) => {
+  Contacto.create(nuevoContacto, (err, data) => {
     if (err) {
       res.status(500).send({ message: err.message || "error" });
     } else {
@@ -21,3 +21,15 @@ exports.create = (req, res) => {
     }
   });
 };
+
+
+exports.buscarAll = (req, res) => {
+  Contacto.getAll((err, data) => { 
+    if (err) {
+      res.status(500).send({ message: err.message || "error" });
+    } else {
+      res.send(data);
+    }
+  });
+};
+
