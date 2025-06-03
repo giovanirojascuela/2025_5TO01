@@ -6,4 +6,4 @@ var conexion = mysql.createPool({
     password:dbconfig.PASSWORD,
     database:dbconfig.DB
 })
-module.exports = conexion;
+export default conexion;
