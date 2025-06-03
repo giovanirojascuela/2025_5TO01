@@ -1,4 +1,11 @@
 {
+<<<<<<< HEAD
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+=======
   "name": "2025_5to01",
   "version": "1.0.0",
   "description": "![alt text](https://www.senati.edu.pe/sites/all/themes/senati_theme/img/logo.svg)",
@@ -10,5 +17,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0"
+>>>>>>> origin
   }
 }
