@@ -13,11 +13,10 @@ Contacto.crearNuevo=(nuevoContacto,result)=>{
             return;
         }
         console.log("creando contacto",{id:res.insertId, ...nuevoContacto});
-        result(null,{id:res.insertId, ...nuevoContacto
-        });
+        result(null,{id:res.insertId, ...nuevoContacto});
     });
 };
-Contacto.buscarAll=(titulo,result)=>{
+Contacto.getAll=(result)=>{
     let query="SELECT * FROM contactos";
     sql.query(query,(err,res)=>{
         if(err){
