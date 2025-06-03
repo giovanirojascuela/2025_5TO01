@@ -1,110 +1,136 @@
 // Filename - Edit.js
-import React, { useEffect, useState } from "react";
-import { Button, Form } from "react-bootstrap";
+
+import React, { useEffect, useState, useCallback } from "react"; // <<< Adicione useCallback
+import { Button, Form, Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import array from "./array";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 function Edit() {
-    // Here usestate has been used in order
-    // to set and get values from the jsx
-    const [name, setname] = useState("");
-    const [age, setage] = useState("");
-    const [id, setid] = useState("");
+    const [nombre, setNombre] = useState("");
+    const [apellido, setApellido] = useState("");
+    const [profesion, setProfesion] = useState("");
+    const [message, setMessage] = useState(null);
+    const [messageVariant, setMessageVariant] = useState("success");
 
-    // Used for navigation with logic in javascript
     let history = useNavigate();
+    const { id } = useParams();
 
-    // Getting an index of an entry with an id
-    let index = array
-        .map(function (e) {
-            return e.id;
-        })
-        .indexOf(id);
+    const API_URL = "http://localhost:3005/api/contactos";
 
-    // Function for handling the edit and
-    // pushing changes of editing/updating
-    const handelSubmit = (e) => {
-        // Preventing from reload
+    // <<< MUDANÇA AQUI: Envolva fetchContact com useCallback
+    const fetchContact = useCallback(async () => {
+        try {
+            const response = await axios.get(`${API_URL}/${id}`);
+            setNombre(response.data.nombre);
+            setApellido(response.data.apellido || '');
+            setProfesion(response.data.profesion);
+            setMessage(null);
+        } catch (error) {
+            console.error("Erro ao carregar contato para edição:", error);
+            setMessage("Erro ao carregar os dados do contato. Verifique o console.");
+            setMessageVariant("danger");
+        }
+    }, [id, API_URL]); // <<< Adicione 'id' e 'API_URL' como dependências de useCallback
+
+    // useEffect para carregar os dados do contato quando o componente for montado ou o ID mudar
+    useEffect(() => {
+        if (id) {
+            fetchContact();
+        } else {
+            setMessage("ID do contato não fornecido para edição.");
+            setMessageVariant("danger");
+        }
+    }, [id, fetchContact]); // <<< MUDANÇA AQUI: Adicione 'fetchContact' ao array de dependências
+
+    // ... (restante do código handleSubmit e return) ...
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (name == "" || age == "") {
-            alert("invalid input");
+
+        if (!nombre.trim() || !profesion.trim()) {
+            setMessage("Por favor, preencha todos os campos obrigatórios.");
+            setMessageVariant("danger");
             return;
         }
 
-        // Getting an index of an array
-        let a = array[index];
+        try {
+            const updatedContactData = {
+                nombre: nombre,
+                apellido: apellido,
+                profesion: profesion
+            };
 
-        // Putting the value from the input
-        // textfield and replacing it from
-        // existing for updation
-        a.Name = name;
-        a.Age = age;
-      
+            const response = await axios.put(`${API_URL}/${id}`, updatedContactData);
 
-        // Redirecting to main page
-        history("/");
+            setMessage("Contato atualizado com sucesso!");
+            setMessageVariant("success");
+            console.log("Resposta do backend:", response.data);
+
+            setTimeout(() => {
+                history("/");
+            }, 2000);
+
+        } catch (error) {
+            console.error("Erro ao atualizar contato:", error);
+            if (error.response) {
+                setMessage(`Erro ${error.response.status}: ${error.response.data.message || 'Ocorreu um erro no servidor.'}`);
+            } else if (error.request) {
+                setMessage("Erro de rede: O servidor não respondeu. (API offline ou CORS)");
+            } else {
+                setMessage(`Erro desconhecido: ${error.message}`);
+            }
+            setMessageVariant("danger");
+        }
     };
-
-    // Useeffect take care that page will
-    // be rendered only once
-    useEffect(() => {
-        setname(localStorage.getItem("Name"));
-        setage(localStorage.getItem("Age"));
-        setid(localStorage.getItem("id"));
-    }, []);
 
     return (
         <div>
-            <Form
-                className="d-grid gap-2"
-                style={{ margin: "5rem" }}
-            >
-                {/* setting a name from the 
-                    input textfiled */}
-                <Form.Group
-                    className="mb-3"
-                    controlId="formBasicEmail"
-                >
+            <Form className="d-grid gap-2" style={{ margin: "5rem" }}>
+                <h2 className="text-center mb-4">Editar Contato</h2>
+
+                {message && <Alert variant={messageVariant}>{message}</Alert>}
+
+                <Form.Group className="mb-3" controlId="formBasicNombre">
                     <Form.Control
-                        value={name}
-                        onChange={(e) =>
-                            setname(e.target.value)
-                        }
+                        value={nombre}
+                        onChange={(e) => setNombre(e.target.value)}
                         type="text"
-                        placeholder="Enter Name"
+                        placeholder="Digite o Nome"
+                        required
                     />
                 </Form.Group>
 
-                {/* setting a age from the input textfiled */}
-                <Form.Group
-                    className="mb-3"
-                    controlId="formBasicPassword"
-                >
+                <Form.Group className="mb-3" controlId="formBasicApellido">
                     <Form.Control
-                        value={age}
-                        onChange={(e) =>
-                            setage(e.target.value)
-                        }
-                        type="number"
-                        placeholder="Age"
+                        value={apellido}
+                        onChange={(e) => setApellido(e.target.value)}
+                        type="text"
+                        placeholder="Digite o Sobrenome"
+                        required
                     />
                 </Form.Group>
 
-                {/* Hadinling an onclick event 
-                    running an edit logic */}
+                <Form.Group className="mb-3" controlId="formBasicProfesion">
+                    <Form.Control
+                        value={profesion}
+                        onChange={(e) => setProfesion(e.target.value)}
+                        type="text"
+                        placeholder="Digite a Profissão"
+                        required
+                    />
+                </Form.Group>
+
                 <Button
-                    onClick={(e) => handelSubmit(e)}
+                    onClick={handleSubmit}
                     variant="primary"
                     type="submit"
                     size="lg"
                 >
-                    Update
+                    Atualizar
                 </Button>
 
-                {/* Redirecting to main page after editing */}
-                <Link className="d-grid gap-2" to="/">
+                <Link className="d-grid gap-2 mt-3" to="/">
                     <Button variant="warning" size="lg">
                         Home
                     </Button>

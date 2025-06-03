@@ -14,8 +14,8 @@ import Home from "./components/Home";
 function App() {
     return (
         <div className="App">
-            <h1 className="geeks">GeeksforGeeks </h1>
-            <h3>CRUD App</h3>
+            <h1 className="geeks">SENATI </h1>
+            <h3>CRUD</h3>
             <Router>
                 <Routes>
                     <Route path="/" element={<Home />} />
@@ -23,10 +23,8 @@ function App() {
                         path="/create"
                         element={<Create />}
                     />
-                    <Route
-                        path="/edit"
-                        element={<Edit />}
-                    />
+                    <Route path="/edit/:id" element={<Edit />} /> {/* <<< ESSA É A LINHA IMPORTANTE */}
+          {/* O ':id' indica que a rota espera um parâmetro chamado 'id' */}
                 </Routes>
             </Router>
         </div>
