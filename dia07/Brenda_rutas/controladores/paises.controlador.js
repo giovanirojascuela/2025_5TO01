@@ -1,15 +1,15 @@
 export const getPaises=(req,res)=>{
-    res.send("funcion de retornar paises")
+    res.send("Mostrar paises")
 }
 export const getPais=(req,res)=>{
-    res.send("retornar pais")
+    res.send("Retornar pais")
 }
 export const crearPais=(req,res)=>{
-    res.send("creo pais")
+    res.send("Creo pais")
 }
 export const modificarPais=(req,res)=>{
-    res.send("modifico pais")
+    res.send("Modifico pais")
 }
 export const eliminarPais=(req,res)=>{
-    res.send("elimino pais")
+    res.send("Elimino pais")
 }
