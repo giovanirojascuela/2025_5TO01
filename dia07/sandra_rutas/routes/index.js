@@ -1,10 +1,8 @@
-import { Router } from "express";
-import paiseaRouter from ",/paises.rutas.js"
-
+import {Router} from "express";
+import contactoRouter from "./contactos.rutas.js"
+import {getContactos} from "../controladores/contactos.controlador.js"
 const indexRouter=Router();
-const prefix = "./api"
-indexRouter.get("/",(req,res)=>{
-    res.send("Aplicacion con rutas");
-});
-indexRouter.use('${prefix}/paises',paisesRouter);
+const prefix ="/api"
+indexRouter.get(prefix,getContactos);
+indexRouter.use(`${prefix}/contactos`,contactoRouter);
 export default indexRouter;

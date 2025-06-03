@@ -1,19 +1,22 @@
 {
   "name": "sandra_rutas",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "nodemon ./src/app.js"
+    "start": "nodemon ./src/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^5.1.0"
-  },
   "devDependencies": {
     "nodemon": "^3.1.10"
   },
-  "description": ""
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql": "^2.18.1",
+    "range-parser": "^1.2.1",
+    "vary": "^1.1.2"
+  }
 }
