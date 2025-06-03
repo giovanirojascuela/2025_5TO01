@@ -1,19 +1,18 @@
 import database from "../config/database.js";
-import Contacto from "../models/contactos.models.js"; 
+import contactoModel from "../models/contactos.models.js"; 
 
-exports.create = (req, res) => {
+export const crearContacto = (req, res) => {
   if (!req.body) {
     res.status(400).send({ message: "vacio" });
-    return;
   }
 
-  const nuevoContacto = new Contacto({
+  const nuevoContacto = new contactoModel({
     nombre: req.body.nombre,
     apellidos: req.body.apellidos,
     profesion: req.body.profesion
   });
 
-  Contacto.create(nuevoContacto, (err, data) => {
+  contactoModel.create(contacto, (err, data) => {
     if (err) {
       res.status(500).send({ message: err.message || "error" });
     } else {
@@ -22,14 +21,36 @@ exports.create = (req, res) => {
   });
 };
 
-
-exports.buscarAll = (req, res) => {
-  Contacto.getAll((err, data) => { 
+export const getContactos = (req, res) => {
+  contactoModel.getAll((err, data) => { 
     if (err) {
-      res.status(500).send({ message: err.message || "error" });
-    } else {
-      res.send(data);
-    }
+      return res.status(500).send({ message: err.message || "error" });
+    } 
+      res.status(200).send(data); 
+  });
+};
+export const getContacto = (req, res) => {
+  contactoModel.getAll((err, data) => { 
+    if (err) {
+      return res.status(500).send({ message: err.message || "error" });
+    } 
+      res.status(200).send(data); 
+  });
+};
+export const modificarContacto = (req, res) => {
+  contactoModel.getAll((err, data) => { 
+    if (err) {
+      return res.status(500).send({ message: err.message || "error" });
+    } 
+      res.status(200).send(data); 
+  });
+};
+export const eliminarContacto = (req, res) => {
+  contactoModel.getAll((err, data) => { 
+    if (err) {
+      return res.status(500).send({ message: err.message || "error" });
+    } 
+      res.status(200).send(data); 
   });
 };
 

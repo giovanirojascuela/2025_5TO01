@@ -1,17 +1,19 @@
 import express from 'express';
 import indexRouter from '../routes/index.js';
-const app= express();
 
-app.set("port",process.env.PORT||3000);
+const app = express();
 
-/**Rutas */
+app.set("port", process.env.PORT || 3000);
 
-app.use("/",indexRouter);
+app.use(express.json());
 
-app.use((req,res)=>{
-    res.send("404 - No existe esa pagina");
+/** Rutas */
+app.use("/", indexRouter);
+
+app.use((req, res) => {
+    res.status(404).send("404 - No existe esa página");
 });
 
-app.listen(app.get("port"),()=>{
-    console.log("El servidor corre en el puerto",app.get("port"));
+app.listen(app.get("port"), () => {
+    console.log("El servidor corre en el puerto", app.get("port"));
 });
