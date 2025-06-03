@@ -5,5 +5,5 @@ var conexion=mysql.createPool({
     user:dbconfig.USER,
     password:dbconfig.PASSWORD,
     database:dbconfig.DB
-})
+});
 export default conexion;
