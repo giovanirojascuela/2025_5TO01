@@ -17,7 +17,7 @@ ContactoModel.crearNuevo=(nuevoContacto,result)=>{
         });
     });
 };
-ContactoModel.getAll=(titulo,result)=>{
+ContactoModel.getAll=(result)=>{
     let query="SELECT *FROM contactos";
     conexion.query(query,(err,res)=>{
     if(err){

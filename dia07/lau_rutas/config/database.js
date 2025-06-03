@@ -1,5 +1,5 @@
 const dbconfig={
-    HOST:"localhost",
+    HOST:"192.168.10.101",
     USER:"libretausuario",
     PASSWORD:"libreta",
     DB:"libreta"
