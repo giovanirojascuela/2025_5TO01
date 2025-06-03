@@ -1,29 +1,63 @@
-import Contacto from "../models/contactos.model";
+import ContactoModel from "../models/contactos.model.js";
 
-exports.create = (req, res) => {
+export const crearContacto=(req, res) => {
     if (!req.body) {
         res.status(400).send({ message: "vacio" });
     }
-    const contacto = new Contacto({
+    const contacto = new ContactoModel({
         nombre: req.body.nombre,
         apellido: req.body.apellidos,
         profesion: req.body.profesion
     });
-    Contacto.create(contacto, (err, data) => {
-        if (err)
-            res.status(500).send({
-                message:
-                    err.message || "error"
-            });
-        else res.send(data);
+    ContactoModel.create(contacto, (err, data) => {
+        if (err){
+            res.status(500).send({message: err.message||"error"}); 
+        }else  res.send(data);
+        
     });
 };
-exports.buscarAll=(req,res)=>{
-    Contacto.geAll(titulo,(err,data)=>{
-        if(err)
-            res.status(500).send({message:
-                err.message||"error"
-        });
-        else res.send(data);
+//getContactos, getContacto, crearContacto, modificarContacto, eliminarContacto
+
+export const getContactos=(req,res)=>{
+    ContactoModel.getAll((err,data)=>{
+        if(err){ 
+            return res.status(500).send({
+                message: err.message||"error"
+                }); 
+        }
+            res.status(200).send(data);
     });
-}
+};
+
+export const modificarContacto=(req,res)=>{
+    ContactoModel.getAll((err,data)=>{
+        if(err){ 
+            return res.status(500).send({
+                message: err.message||"error"
+                }); 
+        }
+            res.status(200).send(data);
+    });
+};
+
+export const eliminarContacto=(req,res)=>{
+    ContactoModel.getAll((err,data)=>{
+        if(err){ 
+            return res.status(500).send({
+                message: err.message||"error"
+                }); 
+        }
+            res.status(200).send(data);
+    });
+};
+
+export const getContacto=(req,res)=>{
+    ContactoModel.getAll((err,data)=>{
+        if(err){ 
+            return res.status(500).send({
+                message: err.message||"error"
+                }); 
+        }
+            res.status(200).send(data);
+    });
+};

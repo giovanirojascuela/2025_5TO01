@@ -1,8 +1,8 @@
 import { Router } from "express";
-import paisesRouter from "./paises.rutas.js"
-import contactos from "../controladores/contactos.controlador.js"
- const indexRouters=Router();
+import contactosRouter from "./contactos.rutas.js"
+import {getContactos} from "../controladores/contactos.controlador.js"
+ const indexRouter=Router();
  const prefix="/api";
- indexRouters.get(prefix,contactos.ver);
- indexRouters.use(`${prefix}/paises`,paisesRouter);
- export default indexRouters;
+ indexRouter.get(prefix,getContactos);
+ indexRouter.use(`${prefix}/contactos`,contactosRouter);
+ export default indexRouter;
