@@ -1,18 +1,19 @@
 {
   "name": "servidorapi",
   "version": "1.0.0",
-  "type": "module",          
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js"
   },
   "author": "Diethmar",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "express": "^5.1.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
-  }
+  },
+  "keywords": [],
+  "description": ""
 }

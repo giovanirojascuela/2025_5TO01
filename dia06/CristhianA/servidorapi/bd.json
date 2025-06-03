@@ -1,0 +1,25 @@
+{
+    "libro":[
+        {
+            "id":1,
+            "nombre":"La caperucita roja",
+            "autor": "Anonimo",
+            "anio": "2000"
+            
+        },
+        {
+            "id":2,
+            "nombre":"Los 3 cerditos",
+            "autor": "Anonimo",
+            "anio": "2001"
+            
+        },
+        {
+            "id":3,
+            "nombre":"Romeo y julieta",
+            "autor": "Shakespeare",
+            "anio": "2003"
+            
+        }
+    ]
+}
