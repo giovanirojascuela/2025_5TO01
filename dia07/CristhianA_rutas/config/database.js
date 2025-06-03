@@ -1,6 +1,7 @@
-module.exports = {
-    HOST: "CristhianA.mysql.pythonanywhere-services.com", 
-    USER: "CristhianA",
-    PASSWORD: "goku1234",
+const dbconfig= {
+    HOST: "localhost", 
+    USER: "libretausuario",
+    PASSWORD: "libreta",
     DB: "libreta",    
 };
+export default dbconfig;
