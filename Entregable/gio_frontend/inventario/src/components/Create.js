@@ -58,7 +58,7 @@ function Create() {
     return (
         <div>
             <Form className="d-grid gap-2" style={{ margin: "5rem" }}>
-                <h2 className="text-center mb-4">Criar Novo Contato</h2>
+                <h2 className="text-center mb-4">Crear nuevo contacto</h2>
 
                 {message && <Alert variant={messageVariant}>{message}</Alert>}
 
@@ -66,7 +66,7 @@ function Create() {
                     <Form.Control
                         onChange={(e) => setNombre(e.target.value)}
                         type="text"
-                        placeholder="Digite o Nome"
+                        placeholder="Escriba el nombre"
                         required
                         value={nombre} 
                     />
@@ -77,7 +77,7 @@ function Create() {
                     <Form.Control
                         onChange={(e) => setApellido(e.target.value)}
                         type="text"
-                        placeholder="Digite o Sobrenome"
+                        placeholder="Escriba el apellido"
                         required
                         value={apellido}
                     />
@@ -88,7 +88,7 @@ function Create() {
                     <Form.Control
                         onChange={(e) => setProfesion(e.target.value)}
                         type="text" 
-                        placeholder="Digite a Profissão"
+                        placeholder="Escriba la profesion"
                         required
                         value={profesion} 
                     />

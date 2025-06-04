@@ -23,8 +23,8 @@ function App() {
                         path="/create"
                         element={<Create />}
                     />
-                    <Route path="/edit/:id" element={<Edit />} /> {/* <<< ESSA É A LINHA IMPORTANTE */}
-          {/* O ':id' indica que a rota espera um parâmetro chamado 'id' */}
+                    <Route path="/edit/:id" element={<Edit />} />
+          
                 </Routes>
             </Router>
         </div>
