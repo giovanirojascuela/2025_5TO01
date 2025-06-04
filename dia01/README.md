@@ -1,19 +1,23 @@
-
-PRACTICA 01
+# PRACTICA 01
 
 1. Jheny Edith Quispe Chinchercoma  
    p02_ssh/dia_01
 
-1. Brenda Shiamira Lopez Layme
+2. Brenda Shiamira Lopez Layme
 
-1. *Diethmar Emerson Velez Calla*  
+3. *Diethmar Emerson Velez Calla*  
    p02_ssh/dia_01
 
-1. *Elver Mamani Quispe*
+4. *Elver Mamani Quispe*  
    p02_ssh/dia_01
 
-1. *Erick Brady AlvareZ Quispe*
+5. *Erick Brady Alvarez Quispe*  
    p02_ssh/dia_01
 
-6. *Jose Luis Mamani Choque*
+6. *Jose Luis Mamani Choque*  
    p02_ssh/dia_01
+
+7. *Cristhian Ccallo Arela*  
+   p02_ssh/dia_01
+
+
