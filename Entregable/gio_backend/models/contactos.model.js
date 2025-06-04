@@ -1,14 +1,12 @@
-// models/contactos.model.js
-import conexion from "./conexion.js"; // Certifique-se de que o caminho está correto
+import conexion from "./conexion.js"; 
 
 const ContactoModel = function(contacto) {
     this.nombre = contacto.nombre;
-    this.apellido = contacto.apellido; // Assumindo que você tem 'apellido' no seu modelo
+    this.apellido = contacto.apellido; 
     this.profesion = contacto.profesion;
 };
 
-// Método para criar um novo contato
-ContactoModel.create = (nuevoContacto, result) => { // Renomeado de 'crearNuevo' para 'create'
+ContactoModel.create = (nuevoContacto, result) => { 
     conexion.query("INSERT INTO contactos SET ?", nuevoContacto, (err, res) => {
         if (err) {
             console.log("error: ", err);
@@ -20,8 +18,7 @@ ContactoModel.create = (nuevoContacto, result) => { // Renomeado de 'crearNuevo'
     });
 };
 
-// Método para obter todos os contatos (ajustado para não usar 'titulo' se não for necessário)
-ContactoModel.getAll = (result) => { // Removeu 'titulo' se ele não for usado para filtrar
+ContactoModel.getAll = (result) => { 
     let query = "SELECT * FROM contactos";
     conexion.query(query, (err, res) => {
         if (err) {
@@ -34,9 +31,6 @@ ContactoModel.getAll = (result) => { // Removeu 'titulo' se ele não for usado p
     });
 };
 
-// --- NOVOS MÉTODOS NECESSÁRIOS ---
-
-// Método para obter um contato por ID
 ContactoModel.findById = (id, result) => {
     conexion.query(`SELECT * FROM contactos WHERE id = ${id}`, (err, res) => {
         if (err) {
@@ -49,12 +43,10 @@ ContactoModel.findById = (id, result) => {
             result(null, res[0]);
             return;
         }
-        // Não encontrou contato com o ID
         result({ kind: "not_found" }, null);
     });
 };
 
-// Método para atualizar um contato por ID
 ContactoModel.updateById = (id, contacto, result) => {
     conexion.query(
         "UPDATE contactos SET nombre = ?, apellido = ?, profesion = ? WHERE id = ?",
@@ -66,7 +58,6 @@ ContactoModel.updateById = (id, contacto, result) => {
                 return;
             }
             if (res.affectedRows == 0) {
-                // Não encontrou contato com o ID
                 result({ kind: "not_found" }, null);
                 return;
             }
@@ -76,7 +67,6 @@ ContactoModel.updateById = (id, contacto, result) => {
     );
 };
 
-// Método para remover um contato por ID
 ContactoModel.remove = (id, result) => {
     conexion.query("DELETE FROM contactos WHERE id = ?", id, (err, res) => {
         if (err) {
@@ -85,7 +75,6 @@ ContactoModel.remove = (id, result) => {
             return;
         }
         if (res.affectedRows == 0) {
-            // Não encontrou contato com o ID
             result({ kind: "not_found" }, null);
             return;
         }

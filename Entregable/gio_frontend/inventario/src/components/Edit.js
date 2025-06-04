@@ -1,6 +1,4 @@
-// Filename - Edit.js
-
-import React, { useEffect, useState, useCallback } from "react"; // <<< Adicione useCallback
+import React, { useEffect, useState, useCallback } from "react"; 
 import { Button, Form, Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
@@ -18,7 +16,6 @@ function Edit() {
 
     const API_URL = "http://localhost:3005/api/contactos";
 
-    // <<< MUDANÇA AQUI: Envolva fetchContact com useCallback
     const fetchContact = useCallback(async () => {
         try {
             const response = await axios.get(`${API_URL}/${id}`);
@@ -31,9 +28,8 @@ function Edit() {
             setMessage("Erro ao carregar os dados do contato. Verifique o console.");
             setMessageVariant("danger");
         }
-    }, [id, API_URL]); // <<< Adicione 'id' e 'API_URL' como dependências de useCallback
+    }, [id, API_URL]); 
 
-    // useEffect para carregar os dados do contato quando o componente for montado ou o ID mudar
     useEffect(() => {
         if (id) {
             fetchContact();
@@ -41,9 +37,8 @@ function Edit() {
             setMessage("ID do contato não fornecido para edição.");
             setMessageVariant("danger");
         }
-    }, [id, fetchContact]); // <<< MUDANÇA AQUI: Adicione 'fetchContact' ao array de dependências
+    }, [id, fetchContact]); 
 
-    // ... (restante do código handleSubmit e return) ...
 
     const handleSubmit = async (e) => {
         e.preventDefault();
