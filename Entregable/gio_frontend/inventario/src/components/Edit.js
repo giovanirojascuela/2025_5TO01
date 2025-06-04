@@ -24,8 +24,8 @@ function Edit() {
             setProfesion(response.data.profesion);
             setMessage(null);
         } catch (error) {
-            console.error("Erro ao carregar contato para edição:", error);
-            setMessage("Erro ao carregar os dados do contato. Verifique o console.");
+            console.error("Error al cargar contacto para edicion:", error);
+            setMessage("Error al cargar contacto para edicion. Verifique en la consola.");
             setMessageVariant("danger");
         }
     }, [id, API_URL]); 
@@ -34,7 +34,7 @@ function Edit() {
         if (id) {
             fetchContact();
         } else {
-            setMessage("ID do contato não fornecido para edição.");
+            setMessage("ID de contacto no encotrado.");
             setMessageVariant("danger");
         }
     }, [id, fetchContact]); 
@@ -44,7 +44,7 @@ function Edit() {
         e.preventDefault();
 
         if (!nombre.trim() || !profesion.trim()) {
-            setMessage("Por favor, preencha todos os campos obrigatórios.");
+            setMessage("Por favor, ingrese todos los campos.");
             setMessageVariant("danger");
             return;
         }
@@ -58,22 +58,22 @@ function Edit() {
 
             const response = await axios.put(`${API_URL}/${id}`, updatedContactData);
 
-            setMessage("Contato atualizado com sucesso!");
+            setMessage("Contacto actualiado correctamente!");
             setMessageVariant("success");
-            console.log("Resposta do backend:", response.data);
+            console.log("Respuesta de backend:", response.data);
 
             setTimeout(() => {
                 history("/");
             }, 2000);
 
         } catch (error) {
-            console.error("Erro ao atualizar contato:", error);
+            console.error("Error al actualizar contacto:", error);
             if (error.response) {
-                setMessage(`Erro ${error.response.status}: ${error.response.data.message || 'Ocorreu um erro no servidor.'}`);
+                setMessage(`Erro ${error.response.status}: ${error.response.data.message || 'Ocurrio un error en el servidor.'}`);
             } else if (error.request) {
-                setMessage("Erro de rede: O servidor não respondeu. (API offline ou CORS)");
+                setMessage("Error de red: el servidor no responde. (API offline en el CORS)");
             } else {
-                setMessage(`Erro desconhecido: ${error.message}`);
+                setMessage(`Error desconocido: ${error.message}`);
             }
             setMessageVariant("danger");
         }
@@ -91,7 +91,7 @@ function Edit() {
                         value={nombre}
                         onChange={(e) => setNombre(e.target.value)}
                         type="text"
-                        placeholder="Digite o Nome"
+                        placeholder="Escriba su nombre"
                         required
                     />
                 </Form.Group>
@@ -101,7 +101,7 @@ function Edit() {
                         value={apellido}
                         onChange={(e) => setApellido(e.target.value)}
                         type="text"
-                        placeholder="Digite o Sobrenome"
+                        placeholder="Escriba su apellido"
                         required
                     />
                 </Form.Group>
@@ -111,7 +111,7 @@ function Edit() {
                         value={profesion}
                         onChange={(e) => setProfesion(e.target.value)}
                         type="text"
-                        placeholder="Digite a Profissão"
+                        placeholder="Escriba su profesion"
                         required
                     />
                 </Form.Group>
@@ -122,12 +122,12 @@ function Edit() {
                     type="submit"
                     size="lg"
                 >
-                    Atualizar
+                    Actualizar
                 </Button>
 
                 <Link className="d-grid gap-2 mt-3" to="/">
                     <Button variant="warning" size="lg">
-                        Home
+                        Inicio
                     </Button>
                 </Link>
             </Form>

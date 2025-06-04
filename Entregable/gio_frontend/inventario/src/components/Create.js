@@ -20,7 +20,7 @@ function Create() {
         e.preventDefault(); 
  
         if (!nombre.trim() || !profesion.trim()) { 
-            setMessage("Por favor, preencha todos os campos obrigatórios.");
+            setMessage("Por favor, ingrese todos lo campos obligatorios.");
             setMessageVariant("danger");
             return;
         }
@@ -34,22 +34,22 @@ function Create() {
 
             const response = await axios.post(API_URL, newContactData);
 
-            setMessage("Contato criado com sucesso!");
+            setMessage("Contacto creado correctamente!");
             setMessageVariant("success");
-            console.log("Resposta do backend:", response.data);
+            console.log("Respuesta del backend:", response.data);
 
             setTimeout(() => {
                 history("/");
             }, 2000); 
 
         } catch (error) {
-            console.error("Erro ao criar contato:", error);
+            console.error("Error al crear contacto:", error);
             if (error.response) {
-                setMessage(`Erro ${error.response.status}: ${error.response.data.message || 'Ocorreu um erro no servidor.'}`);
+                setMessage(`Error ${error.response.status}: ${error.response.data.message || 'Ocurrio un error en el servidor.'}`);
             } else if (error.request) {
-                setMessage("Erro de rede: O servidor não respondeu. (API offline ou CORS)");
+                setMessage("Error de red: El servidor no responde. (API offline en el CORS)");
             } else {
-                setMessage(`Erro desconhecido: ${error.message}`);
+                setMessage(`Error desconocido: ${error.message}`);
             }
             setMessageVariant("danger");
         }

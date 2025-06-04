@@ -17,8 +17,8 @@ function Home() {
             setUsers(response.data);
             setMessage(null); 
         } catch (error) {
-            console.error("Erro ao carregar usuários:", error);
-            setMessage("Erro ao carregar usuários. Verifique o console para detalhes.");
+            console.error("Error al cargar contactos:", error);
+            setMessage("Error al cargar contactos. Verifique en la consola los detalles.");
             setMessageVariant("danger");
         }
     };
@@ -27,15 +27,15 @@ function Home() {
         fetchUsers();
     }, []); 
     async function deleted(id) {
-        if (window.confirm("Você tem certeza que deseja deletar este usuário?")) {
+        if (window.confirm("Ud. desea eliminar el contacto?")) {
             try {
                 await axios.delete(`${API_URL}/${id}`);
-                setMessage("Usuário deletado com sucesso!");
+                setMessage("Contacto eliminado correctamente!");
                 setMessageVariant("success");
                 fetchUsers();
             } catch (error) {
-                console.error("Error al eliminar usuario:", error);
-                setMessage("Error al eliminar usuario. Verifique o console para detalles.");
+                console.error("Error al eliminar contacto:", error);
+                setMessage("Error al eliminar usuario. Verifique en la console para detalles.");
                 setMessageVariant("danger");
             }
         }
