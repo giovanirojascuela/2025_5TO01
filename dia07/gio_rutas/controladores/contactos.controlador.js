@@ -1,6 +1,6 @@
 import ContactoModel from  "../models/contactos.model.js";
 //const Contacto=require("../models/contactos.model");
-exports.create=(req,res)=>{
+export const create=(req,res)=>{
     if(!req.body){
         res.status(400).send({message:"vacio"});
     }
@@ -17,7 +17,8 @@ exports.create=(req,res)=>{
         else res.send(data);
     });
 };
-exports.buscarAll=(req,res)=>{
+export const buscarAll=(req,res)=>{
+    const titulo="";
     ContactoModel.getAll(titulo,(err,data)=>{
         if(err) res.status(500).send({
             message:
