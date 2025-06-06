@@ -12,7 +12,7 @@ console.log(libro['paginas'])
 libro.paginas=64
 console.log(libro['paginas'])
 /*Metodos */
-var libro={
+var libro={ 
     paginas:64,
     leer: function(){
         console.log("se hizo la lectura")

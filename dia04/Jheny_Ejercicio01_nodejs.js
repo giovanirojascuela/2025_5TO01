@@ -21,4 +21,4 @@ var saludo = "Bienvenidos al curso de JavaScript!";
 console.log("Saludo: " + saludo);
 
 // Valor indefinido
-var valorIndefinido
+var valorIndefinido 

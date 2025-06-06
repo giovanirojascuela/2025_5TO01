@@ -6,4 +6,4 @@ export function sub(a,b){
 }
 export function mult(a,b){
     return a*b
-}
+} 

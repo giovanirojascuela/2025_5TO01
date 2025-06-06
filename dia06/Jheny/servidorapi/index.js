@@ -12,6 +12,7 @@ const leerArchivo=()=>{
     } catch(error){
         console.log(error);
     } 
+    
 };
 //Funcion de Escritura de archivo de datos
 //leerArchivo();

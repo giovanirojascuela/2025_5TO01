@@ -7,3 +7,4 @@ var conexion=mysql.createPool({
     database:dbconfig.DB
 })
 export default conexion;
+

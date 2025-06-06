@@ -19,6 +19,7 @@ const segundoTexto=fs.readFileSync('./archivo2.txt','utf-8')
 console.log("-->Segundo texto leido",segundoTexto)
 
 
+
 /**************Lectura Asincrona*/
 console.log("###Leyendo archivo de forma Asicrona")
 fs.readFile('./archivo.txt','utf-8',(err,texto)=>{
