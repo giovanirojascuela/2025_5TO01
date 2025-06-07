@@ -1,5 +1,5 @@
 import sql from "./conexion.js";
-const Contacto=function(contacto){
+export const Contacto=function(contacto){
     this.nombre=contacto.nombre;
     this.apellido=contacto.apellido;
     this.profesion=contacto.profesion;
@@ -13,8 +13,20 @@ Contacto.crearNuevo=(nuevoContacto,result)=>{
             return;
         }
         console.log("creando contacto",{id:res.insertId, ...nuevoContacto});
-        result(null,{id:res.insertId, ...nuevoContacto
-        });
+        result(null,{id:res.insertId, ...nuevoContacto});
     });
 };
-module.exports=Contacto;
+Contacto.getAll=(result)=>{
+    let query="SELECT * FROM contactos";
+    sql.query(query,(err,res)=>{
+        if(err){
+            console.log("error",err);
+            result(err,null);
+            return;
+        }
+        console.log("Contactos:",res);
+        result(null,res);
+    });
+};
+//export default Contacto;
+//module.exports=Contacto;
