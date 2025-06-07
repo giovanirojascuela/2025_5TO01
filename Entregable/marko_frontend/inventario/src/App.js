@@ -14,7 +14,7 @@ import Home from "./components/Home";
 function App() {
     return (
         <div className="App">
-            <h1 className="geeks">SENATI </h1>
+            <h1 className="geeks">Botica  </h1>
             <h3>CRUD</h3>
             <Router>
                 <Routes>

@@ -27,14 +27,14 @@ function Home() {
         fetchUsers();
     }, []); 
     async function deleted(id) {
-        if (window.confirm("Ud. desea eliminar el contacto?")) {
+        if (window.confirm("Ud. desea eliminar el cliente?")) {
             try {
                 await axios.delete(`${API_URL}/${id}`);
-                setMessage("Contacto eliminado correctamente!");
+                setMessage("Cliente eliminado correctamente!");
                 setMessageVariant("success");
                 fetchUsers();
             } catch (error) {
-                console.error("Error al eliminar contacto:", error);
+                console.error("Error al eliminar cliente:", error);
                 setMessage("Error al eliminar usuario. Verifique en la console para detalles.");
                 setMessageVariant("danger");
             }
@@ -43,7 +43,7 @@ function Home() {
 
     return (
         <div style={{ margin: "2rem" }}>
-            <h1 className="text-center mb-4">Administracion de Contactos</h1>
+            <h1 className="text-center mb-4">Administracion de Clientes</h1>
 
             {message && <Alert variant={messageVariant}>{message}</Alert>}
 
@@ -52,8 +52,8 @@ function Home() {
                     <tr>
                         <th>Nombre</th>
                         <th>Apellido</th> 
-                        <th>Profesion</th>
-                        <th>Acciones</th>
+                        <th>Producto</th>
+                        <th>Cliente</th>
                     </tr>
                 </thead>
                 <tbody>

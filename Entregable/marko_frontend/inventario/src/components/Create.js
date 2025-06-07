@@ -88,7 +88,7 @@ function Create() {
                     <Form.Control
                         onChange={(e) => setProfesion(e.target.value)}
                         type="text" 
-                        placeholder="Escriba la profesion"
+                        placeholder="Escriba la producto"
                         required
                         value={profesion} 
                     />

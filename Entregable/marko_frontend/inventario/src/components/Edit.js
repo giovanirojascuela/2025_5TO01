@@ -82,7 +82,7 @@ function Edit() {
     return (
         <div>
             <Form className="d-grid gap-2" style={{ margin: "5rem" }}>
-                <h2 className="text-center mb-4">Editar Contato</h2>
+                <h2 className="text-center mb-4">Editar Cliente</h2>
 
                 {message && <Alert variant={messageVariant}>{message}</Alert>}
 
@@ -111,7 +111,7 @@ function Edit() {
                         value={profesion}
                         onChange={(e) => setProfesion(e.target.value)}
                         type="text"
-                        placeholder="Escriba su profesion"
+                        placeholder="Escriba su producto"
                         required
                     />
                 </Form.Group>
