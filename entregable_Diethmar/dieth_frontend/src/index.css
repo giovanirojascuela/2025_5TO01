@@ -1,0 +1,365 @@
+/* Barra de búsqueda */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.search-bar input {
+  width: 350px;
+  padding: 12px 15px;
+  border-radius: 50px;
+  border: 2px solid #007f3d;
+  font-size: 16px;
+  margin-right: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease-in-out;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #005c2d;
+  box-shadow: 0 4px 10px rgba(0, 92, 45, 0.3);
+}
+
+.search-bar button {
+  background-color: #007f3d;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar button:hover {
+  background-color: #005c2d;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos generales */
+.container {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: 30px;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #007f3d;
+  font-family: 'Arial', sans-serif;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+h3 {
+  color: #005c2d;
+  text-align: center;
+  font-size: 24px;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+/* Tabla */
+.table {
+  width: 100%;
+  margin-top: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 15px;
+  font-size: 16px;
+}
+
+.table th {
+  background-color: #007f3d;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.table tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table tbody tr td {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Botones */
+.btn-warning,
+.btn-danger {
+  padding: 10px 25px;
+  border-radius: 50px;
+  margin: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border: 2px solid #ffc107;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: 2px solid #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Animaciones */
+.card-title,
+.card-text {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.card-title:hover,
+.card-text:hover {
+  transform: scale(1.05);
+  color: #007f3d;
+}
+
+.card-body {
+  transition: background-color 0.3s ease;
+  background: linear-gradient(135deg, #cbda03, #16793a);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.card-body:hover {
+  background: linear-gradient(135deg, #006f2c, #38c77e);
+}
+
+.card {
+  background: linear-gradient(135deg, #007f3d, #4CAF50);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.card-text {
+  color: #f8f9fa;
+  font-size: 14px;
+}
+
+/* Formulario de venta */
+input[type="number"] {
+  border-radius: 25px;
+  padding: 8px;
+  border: 2px solid #007f3d;
+  transition: 0.3s ease;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: #005c2d;
+  box-shadow: 0 4px 10px rgba(0, 92, 45, 0.3);
+}
+
+/* Títulos y texto del historial */
+.table td,
+.table th {
+  font-size: 14px;
+  text-align: center;
+  padding: 15px;
+}
+
+.table td {
+  background-color: #ffffff;
+}
+
+.table td:hover {
+  background-color: #f1f1f1;
+  transition: 0.3s;
+}
+
+
+/* Fondo animado */
+body {
+   background: linear-gradient(135deg, hsl(182, 86%, 72%), #ebe700, #a51616, #e096e7);  /* Añadimos más colores */
+  background-size: 400% 400%; /* Aseguramos que el gradiente cubra toda el área */
+  animation: gradientAnimation 15s ease infinite;  /* Animación de fondo */
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Barra lateral */
+.bg-dark {
+  background-color: #2f2f2f !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #fff;
+}
+
+/* Botones con transiciones */
+.btn {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Sombra a los botones */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para inputs */
+input[type="number"] {
+  border-radius: 8px;
+  border: 2px solid #25f4ce;
+}
+
+input[type="number"]:focus {
+  border-color: #536bd4;
+  outline: none;
+}
+
+/* Títulos de la página */
+h1, h2, h3 {
+  color: #333;
+}
+/* Barra lateral con fondo degradado y animado */
+.bg-dark {
+  background: linear-gradient(135deg, hsl(182, 86%, 72%), #ebe700, #a51616, #e096e7);  /* Añadimos más colores */
+  background-size: 400% 400%; /* Aseguramos que el gradiente cubra toda el área */
+  animation: gradientAnimation 15s ease infinite;  /* Animación de fondo */
+  color: white;
+}
+
+/* Animación del fondo */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Mejora de estilo para los botones */
+.btn-light {
+  background-color: #16a45b; /* Gris oscuro para el fondo */
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-light:hover {
+  background-color: #74ebd5; /* Color de fondo diferente al hacer hover */
+  transform: scale(1.05);  /* Efecto de agrandamiento al pasar el mouse */
+}
+
+/* Efecto de hover para los botones */
+.btn {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Cambiar el fondo al pasar el mouse */
+  transform: scale(1.05); /* Agrandar el botón ligeramente al hacer hover */
+}
+
+/* Sombra y border-radius en las tarjetas */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Añadir bordes y sombras a los inputs */
+input[type="number"], input[type="text"], input[type="email"] {
+  border-radius: 8px;
+  border: 2px solid #74ebd5;
+}
+
+input[type="number"]:focus, input[type="text"]:focus, input[type="email"]:focus {
+  border-color: #ACB6E5;
+  outline: none;
+}
+
+/* Enlaces */
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2575fc;
+  font-weight: bold;
+}
