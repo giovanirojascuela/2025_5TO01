@@ -1,0 +1,87 @@
+/* App.css */
+
+/* Contenedor principal de la aplicación */
+.App {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+    min-height: 100vh;
+}
+
+/* Contenedor del header */
+.header-container {
+    background-color: #2C3E50;
+    color: white;
+    padding: 20px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 5px solid #16A085;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor de la logo */
+.header-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.brand-name {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1ABC9C;
+}
+
+.store-name {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: #ecf0f1;
+}
+
+/* Barra de navegación */
+.navigation-bar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Estilo de los botones de navegación */
+.nav-button {
+    background-color: #1ABC9C;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:hover {
+    background-color: #16A085;
+    transform: translateY(-4px);
+}
+
+.nav-button:active {
+    background-color: #1A8A74;
+    transform: translateY(2px);
+}
+
+/* Añadir espacio entre las rutas de navegación */
+nav a {
+    margin: 0 15px;
+}
+
+/* Transición de hover en los enlaces de navegación */
+.nav-button {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #16A085;
+    transform: scale(1.1);
+}
