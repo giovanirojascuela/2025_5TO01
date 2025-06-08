@@ -1,8 +1,14 @@
-import {Router} from "express";
-import contactosRouter from "./contactos.rutas.js"
-import {getContactos} from "../controladores/contactos.controlador.js"
-const indexRouter=Router();
-const prefix ="/api"
-indexRouter.get(prefix,getContactos);
-indexRouter.use(`${prefix}/contactos`,contactosRouter);
+import { Router } from "express";
+import clientesRouter from "./clientes.rutas.js";
+
+const indexRouter = Router();
+
+// Ruta base de prueba para verificar conexión
+indexRouter.get("/", (req, res) => {
+  res.send("API funcionando correctamente");
+});
+
+// Rutas de clientes
+indexRouter.use("/clientes", clientesRouter);
+
 export default indexRouter;

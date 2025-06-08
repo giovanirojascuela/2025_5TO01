@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react"; 
+import React, { useEffect, useState, useCallback } from "react";
 import { Button, Form, Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
@@ -11,67 +11,65 @@ function Edit() {
     const [message, setMessage] = useState(null);
     const [messageVariant, setMessageVariant] = useState("success");
 
-    let history = useNavigate();
+    const navigate = useNavigate();
     const { id } = useParams();
 
-    const API_URL = "http://localhost:3005/api/contactos";
+    const API_URL = "http://localhost:3005/api/clientes";
 
-    const fetchContact = useCallback(async () => {
+    const fetchCliente = useCallback(async () => {
         try {
             const response = await axios.get(`${API_URL}/${id}`);
-            setNombre(response.data.nombre);
-            setApellido(response.data.apellido || '');
-            setProfesion(response.data.profesion);
+            setNombre(response.data.nombre || "");
+            setApellido(response.data.apellido || "");
+            setProfesion(response.data.profesion || "");
             setMessage(null);
         } catch (error) {
-            console.error("Error al cargar contacto para edicion:", error);
-            setMessage("Error al cargar contacto para edicion. Verifique en la consola.");
+            console.error("Error al cargar cliente para edición:", error);
+            setMessage("Error al cargar cliente para edición. Verifique la consola.");
             setMessageVariant("danger");
         }
-    }, [id, API_URL]); 
+    }, [id]);
 
     useEffect(() => {
         if (id) {
-            fetchContact();
+            fetchCliente();
         } else {
-            setMessage("ID de contacto no encotrado.");
+            setMessage("ID de cliente no encontrado.");
             setMessageVariant("danger");
         }
-    }, [id, fetchContact]); 
-
+    }, [id, fetchCliente]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!nombre.trim() || !profesion.trim()) {
-            setMessage("Por favor, ingrese todos los campos.");
+        if (!nombre.trim() || !apellido.trim() || !profesion.trim()) {
+            setMessage("Por favor, complete todos los campos.");
             setMessageVariant("danger");
             return;
         }
 
         try {
-            const updatedContactData = {
-                nombre: nombre,
-                apellido: apellido,
-                profesion: profesion
+            const clienteActualizado = {
+                nombre,
+                apellido,
+                profesion
             };
 
-            const response = await axios.put(`${API_URL}/${id}`, updatedContactData);
+            const response = await axios.put(`${API_URL}/${id}`, clienteActualizado);
 
-            setMessage("Contacto actualiado correctamente!");
+            setMessage("Cliente actualizado correctamente!");
             setMessageVariant("success");
-            console.log("Respuesta de backend:", response.data);
+            console.log("Respuesta del backend:", response.data);
 
             setTimeout(() => {
-                history("/");
+                navigate("/");
             }, 2000);
-
         } catch (error) {
-            console.error("Error al actualizar contacto:", error);
+            console.error("Error al actualizar cliente:", error);
             if (error.response) {
-                setMessage(`Erro ${error.response.status}: ${error.response.data.message || 'Ocurrio un error en el servidor.'}`);
+                setMessage(`Error ${error.response.status}: ${error.response.data.message || 'Ocurrió un error en el servidor.'}`);
             } else if (error.request) {
-                setMessage("Error de red: el servidor no responde. (API offline en el CORS)");
+                setMessage("Error de red: El servidor no responde.");
             } else {
                 setMessage(`Error desconocido: ${error.message}`);
             }
@@ -81,47 +79,42 @@ function Edit() {
 
     return (
         <div>
-            <Form className="d-grid gap-2" style={{ margin: "5rem" }}>
-                <h2 className="text-center mb-4">Editar Contato</h2>
+            <Form className="d-grid gap-2" style={{ margin: "5rem" }} onSubmit={handleSubmit}>
+                <h2 className="text-center mb-4">Editar Cliente</h2>
 
                 {message && <Alert variant={messageVariant}>{message}</Alert>}
 
-                <Form.Group className="mb-3" controlId="formBasicNombre">
+                <Form.Group className="mb-3" controlId="formNombre">
                     <Form.Control
                         value={nombre}
                         onChange={(e) => setNombre(e.target.value)}
                         type="text"
-                        placeholder="Escriba su nombre"
+                        placeholder="Nombre"
                         required
                     />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicApellido">
+                <Form.Group className="mb-3" controlId="formApellido">
                     <Form.Control
                         value={apellido}
                         onChange={(e) => setApellido(e.target.value)}
                         type="text"
-                        placeholder="Escriba su apellido"
+                        placeholder="Apellido"
                         required
                     />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicProfesion">
+                <Form.Group className="mb-3" controlId="formProfesion">
                     <Form.Control
                         value={profesion}
                         onChange={(e) => setProfesion(e.target.value)}
                         type="text"
-                        placeholder="Escriba su profesion"
+                        placeholder="Profesión"
                         required
                     />
                 </Form.Group>
 
-                <Button
-                    onClick={handleSubmit}
-                    variant="primary"
-                    type="submit"
-                    size="lg"
-                >
+                <Button variant="primary" type="submit" size="lg">
                     Actualizar
                 </Button>
 

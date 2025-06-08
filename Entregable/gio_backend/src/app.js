@@ -1,27 +1,38 @@
-import express from 'express';
-import indexRouter from '../routes/index.js';
-import cors from 'cors'; 
-const app = express();
+import express from "express";
+import cors from "cors";
 
-app.set("port", process.env.PORT || 3005);
+import indexRouter from "../routes/index.js";
+import ventasRoutes from "../routes/ventas.rutas.js";
+import detalleVentasRoutes from "../routes/detalle_ventas.rutas.js";
+import atencionRoutes from "../routes/atencion.rutas.js";
+import productosRoutes from "../routes/productos.rutas.js"; // 👈 Correcto
 
-app.use(cors()); 
+const app = express(); // ✅ Mueve esto arriba, antes de cualquier uso de `app`
+const PORT = process.env.PORT || 3005;
 
+app.use(cors());
 app.use(express.json());
-
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/", indexRouter); 
+// Rutas principales
+app.use("/api", indexRouter);
+app.use("/api/productos", productosRoutes); // ✅ Aquí ya está bien
+app.use("/api/ventas", ventasRoutes);
+app.use("/api/detalle_ventas", detalleVentasRoutes);
+app.use("/api/atencion_cliente", atencionRoutes);
 
+// Ruta no encontrada
 app.use((req, res) => {
-    res.status(404).send("404 - No existe esa pagina"); 
+  res.status(404).json({ message: "404 - Ruta no encontrada" });
 });
 
+// Manejo de errores generales
 app.use((err, req, res, next) => {
-    console.error(err.stack); 
-    res.status(500).send('Algo deu errado no servidor!'); 
+  console.error("Error del servidor:", err.stack);
+  res.status(500).json({ message: "Error interno del servidor" });
 });
 
-app.listen(app.get("port"), () => {
-    console.log("El servidor corre en el puerto", app.get("port"));
+// Iniciar servidor
+app.listen(PORT, () => {
+  console.log(`🚀 Servidor ejecutándose en http://localhost:${PORT}`);
 });
