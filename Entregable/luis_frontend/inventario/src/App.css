@@ -1,0 +1,33 @@
+/* Fondo general */
+body, html {
+  background-color: hsl(177, 69%, 87%);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Contenedor principal de la app */
+.App {
+  background-color: hsl(177, 66%, 83%); /* mismo fondo para continuidad */
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Título principal */
+.geeks {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Subtítulo */
+h3 {
+  margin-top: 0;
+  color: #555;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
