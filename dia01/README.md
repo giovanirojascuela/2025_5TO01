@@ -16,8 +16,12 @@
 
 6. *Jose Luis Mamani Choque*  
    p02_ssh/dia_01
+<<<<<<< HEAD
 
 7. *Cristhian Ccallo Arela*  
    p02_ssh/dia_01
 
+   
+1. Yoel Brian Condori Cancapa
+   
 
