@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "name": "cristhiana_rutas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "scripts": {
+    "start": "nodemon ./src/app.js"  
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
