@@ -17,4 +17,7 @@ PRACTICA 01
    p02_ssh/dia_01
    
 1. Yoel Brian Condori Cancapa
+<<<<<<< HEAD
    
+=======
+>>>>>>> 3f92ff6c717673ebe6c59788b2ae2f044bd28e5f
