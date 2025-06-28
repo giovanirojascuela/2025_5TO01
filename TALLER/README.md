@@ -1,151 +1,97 @@
 ### Senati
 ![alt text](https://www.senati.edu.pe/sites/all/themes/senati_theme/img/logo.svg)
 
-# Flujo de Trabajo Git para GitHub
+# Ejercicio Práctico: Previsión de Ventas de Café con TensorFlow Keras y Flask
 
-### 1. Configuración Inicial (Única Vez)
+## Objetivo
 
-```bash
-ssh-keygen -t ed25519 -C "tu_correo@example.com"    #  Generar clave SSH (si es la primera vez)
-Get-Service ssh-agent | Set-Service -StartupType Manual #  Iniciar agente SSH
-ssh-agent                                             #  Asegurar que el agente SSH esté corriendo
-ssh-add C:\Users\TU_USUARIO\.ssh\id_ed25519           #  Añadir clave SSH al agente
+Desarrollar una solución completa en Python para predecir las ventas de café (totales y por tipo), utilizando técnicas de Machine Learning con TensorFlow Keras y disponibilizando esta predicción a través de una API RESTful desarrollada con Flask.
 
-git config --global user.email "giovanirojascuela@gmail.com" #  Configurar email globalmente
-git config --global user.name "Gio"                          #  Configurar nombre globalmente
-```
+## Contexto
 
----
+Una cafetería busca optimizar su stock y planificación de producción de café. Han recopilado datos históricos de ventas y necesitan un sistema que prediga las ventas futuras basándose en variables relevantes.
 
-### 2. Clonar Repositorio Existente
+## Datos Proporcionados
 
-```bash
-git clone git@github.com:giovanirojascuela/2025_5TO01.git    #  Clona el repositorio a tu máquina local
-cd 2025_5TO01                                              #  Entra en la carpeta del proyecto
-```
+Para este ejercicio, utilizarán los siguientes archivos de datos históricos de ventas:
 
----
+* **`index_1.txt`**: Contiene datos de ventas de `2024-03-01` a `2025-03-22`. Columnas: `date`, `datetime`, `cash_type`, `card`, `money`, `coffee_name`.
+* **`index_2.txt`**: Contiene datos de ventas de `2025-02-08` a `2025-03-22`. Columnas: `date`, `datetime`, `cash_type`, `money`, `coffee_name`.
 
-### 3. Crear y Cambiar a una Nueva Rama
+**Consideraciones sobre los Datos:**
+* Cada fila representa una transacción individual de una unidad de café. La columna `money` se considera el `precio_unitario` para esa unidad.
+* Deberán combinar y pre-procesar ambos archivos.
 
-```bash
-git checkout -b nueva-rama-desarrollo  #  Crea una nueva rama y cámbiate a ella
-git checkout nombre-de-rama-existente  #  Si la rama ya existe, solo cámbiate a ella
-```
+## Tareas a Realizar
 
----
+Los estudiantes deberán desarrollar una solución que contemple las siguientes etapas:
 
-### 4. Ciclo de Desarrollo Básico (Trabajar y Enviar Cambios)
+### 1. Análisis y Preparación de Datos
 
-```bash
-git status                                   #  Verifica el estado actual de tus archivos
-git add .                                    #  Añade todos los cambios al área de staging
-git commit -m "Descripción concisa de los cambios" #  Confirma los cambios con un mensaje claro
-git push origin tu-rama-actual               #  Envía tus cambios a la rama remota
-```
+* Cargar y unir los datasets `index_1.txt` y `index_2.txt`.
+* Realizar Análisis Exploratorio de Datos (EDA) utilizando visualizaciones para entender los patrones.
+* **Ingeniería de Características:** Extraer mes, día de la semana, hora del `datetime`. Crear `cantidad_total_vendida_no_dia` (suma de `money` por día). Codificar variables categóricas (e.g., One-Hot Encoding).
+* Dividir los datos en conjuntos de entrenamiento y prueba.
 
----
+### 2. Modelado Predictivo (con TensorFlow Keras)
 
-### 5. Sincronización de Ramas
+* Construir y entrenar un modelo de red neuronal (utilizando **TensorFlow Keras**) para prever la `cantidad_total_vendida_no_dia`.
+* Construir y entrenar otro modelo (con **TensorFlow Keras**) para prever la `cantidad_vendida` por `coffee_name` (o un enfoque multi-output).
+* Evaluar los modelos utilizando métricas de regresión (MAE, MSE, RMSE, R²).
 
-#### 5.1. Actualizar tu Rama Local 'main' con la Rama Remota 'main'
+### 3. Serialización del Modelo
 
-Este flujo asegura que tu versión local de la rama principal (`main`) esté completamente al día con lo que hay en el servidor (GitHub).
+* Guardar el/los modelo/s entrenado/s de Keras (en formato `.h5` o `SavedModel`) y los pre-procesadores (escaladores, codificadores de `scikit-learn`) utilizando `pickle` o `joblib`.
 
-```bash
-git checkout main         #  Cambia a la rama principal (main)
-git fetch origin          #  Descarga los últimos cambios de 'main' desde el remoto (sin fusionar automáticamente)
-git merge origin/main     #  Fusiona los cambios descargados de 'origin/main' en tu rama local 'main'
-#  Alternativa para actualizar y fusionar en un solo paso: git pull origin main
-```
+### 4. Desarrollo del Backend con Flask
 
----
+* Crear una aplicación Flask.
+* Cargar el/los modelo/s de Keras y los pre-procesadores al iniciar la aplicación.
+* Exponer un endpoint POST (`/prever_vendas`) que reciba un JSON con las características de entrada para la predicción.
 
-#### 5.2. Actualizar tu Rama de Trabajo ('gio') con la Rama Local 'main'
+    * **Ejemplo de JSON de entrada (predicción total):**
+        ```json
+        {
+            "date": "2025-04-01",
+            "temperatura_media_c": 25.0,
+            "feriado": 0,
+            "promocion": 1,
+            "evento_local": 0
+        }
+        ```
+    * **Ejemplo de JSON de entrada (predicción por tipo de café):**
+        ```json
+        {
+            "date": "2025-04-01",
+            "temperatura_media_c": 25.0,
+            "feriado": 0,
+            "promocion": 1,
+            "evento_local": 0,
+            "coffee_name": "Latte"
+        }
+        ```
+* Pre-procesar los datos de entrada en el endpoint usando los objetos guardados.
+* Realizar las predicciones y devolverlas como respuesta JSON.
+* Incluir un endpoint de "salud" (ej. `/`).
 
-Este flujo te permite traer las últimas actualizaciones de la rama `main` (que ya has sincronizado localmente) a tu rama de desarrollo (`gio`), para evitar conflictos futuros y trabajar con la base de código más reciente.
+## Requisitos Técnicos
 
-```bash
-git checkout gio          #  Asegúrate de estar en tu rama de trabajo (ej. 'gio')
-git merge main            #  Fusiona los cambios de la rama local 'main' en tu rama actual ('gio')
-#  Resuelve los conflictos si los hay (Git te guiará durante el proceso)
-git push origin gio       #  Envía los cambios fusionados (y resueltos) a tu rama remota 'gio'
-```
+* **Ambiente Virtual:** Crear y activar un entorno virtual (`venv`) para el proyecto e instalar las dependencias ahí.
+* **Lenguaje:** Python 3.x
+* **Bibliotecas (recordatorio de complementos):**
+    * `pandas` (para manipulación de datos)
+    * `numpy` (para operaciones numéricas)
+    * `tensorflow` y `keras` (para modelado de Deep Learning)
+    * `scikit-learn` (para pre-procesamiento de datos, métricas y modelos base)
+    * `matplotlib` y `seaborn` (para visualización de datos en EDA)
+    * `Flask` (para el backend)
+    * `joblib` o `pickle` (para serialización de pre-procesadores)
+* **Estructura:** Código organizado en módulos.
+* **Documentación:** `README.md` con instrucciones claras para configurar, entrenar y ejecutar.
 
----
+## Criterios de Evaluación
 
-### 6. Deshacer Cambios
-
-#### 6.1. Deshacer Cambios Locales No Añadidos (Unstaged)
-
-```bash
-git checkout -- nombre-del-archivo.txt #  Descarta cambios en un archivo específico
-git reset --hard HEAD                  #  Descarta todos los cambios en el directorio de trabajo (¡con precaución!)
-```
-
-#### 6.2. Deshacer Cambios del Área de Staging (Unstage)
-
-```bash
-git reset HEAD nombre-del-archivo.txt  #  Mueve un archivo del staging de vuelta al área de trabajo
-git reset HEAD .                       #  Mueve todos los archivos del staging de vuelta al área de trabajo
-```
-
-#### 6.3. Deshacer el Último Commit (Local)
-
-```bash
-git revert HEAD         #  Crea un nuevo commit que revierte los cambios del último (seguro si ya hiciste push)
-git reset --soft HEAD~1 #  Deshace el último commit y mueve los cambios al staging (¡solo si NO has hecho push!)
-git reset --hard HEAD~1 #  Deshace el último commit y descarta los cambios (¡solo si NO has hecho push y quieres perderlos!)
-```
-
----
-
-### 7. Borrar Archivos o Carpetas del Repositorio
-
-```bash
-git rm --cached nombre-del-archivo.txt #  Eliminar un archivo del control de versiones (lo mantiene localmente)
-git rm nombre-del-archivo.txt          #  Eliminar un archivo del control de versiones y del disco local
-git rm -r nombre-de-la-carpeta/        #  Eliminar una carpeta del control de versiones (recursivo)
-
-git commit -m "Eliminado archivo/carpeta X" #  Después de usar 'git rm', recuerda hacer commit
-git push origin tu-rama-actual              #  Y luego push para reflejar los cambios en el remoto
-```
-
----
-
-### 8. Ver Historial y Ramas
-
-```bash
-git log                            #  Muestra el historial de commits
-git log --oneline --graph --all    #  Muestra un historial más conciso y gráfico de todas las ramas
-git branch -av                     #  Muestra todas las ramas locales y remotas
-```
-
----
-
-### 9. Manejo de Tags (Etiquetas)
-
-```bash
-git tag v1.0.0                      #  Crear un tag ligero
-git tag -a v1.0.0 -m "Versión 1.0.0 lista para producción" #  Crear un tag anotado (recomendado, con mensaje)
-
-git tag                             #  Listar todos los tags locales
-git push origin --tags              #  Enviar todos los tags locales al repositorio remoto
-
-git tag -d v1.0.0                   #  Eliminar un tag local
-git push origin :refs/tags/v1.0.0   #  Eliminar un tag remoto
-```
-
-=======
-### Lista de Participantes
-1. Jose Luis Mamani Choque 1314313
-2. andres alanoca parizaca
-3. Edson Juvenal Pilco Condori
-4. Diethmar Emerson Velez Guimaraes 1517672
-5. Alexandra Hancco Vargas
-6. **Sandra Vanessa Mamani Chambi**
-7. **Claudio Emerson Vilca Calcina**
-8. Elver Mamani Quispe -el pedri 
-9. Cristhian Cc. A.
-10. saduc soncco quispe
-11. Renato Fabrizio Gonzales Olazabal 1462350
+* Calidad del Código.
+* Análisis y Pre-procesamiento de Datos.
+* Rendimiento y Selección del Modelo (especialmente el uso de Keras).
+* Funcionalidad del Backend.
